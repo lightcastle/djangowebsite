@@ -7,7 +7,7 @@ information search and discovery architecture with the latest
 technologies that our client thought was absolutely fantastic."</p>
 <div class="source"><b>Sue Rowell</b>, <i>PMP, Battelle Memorial Institute</i></div>
 #{/}
-<link rel="stylesheet" href={{ STATIC_URL }}main.css />
+
 <div id="content_container">
     <h2>Our Craft, Your Ideas. One Solid Solution.</h2>
     <p> <img src="/static/images/birds.jpg" alt="web development" width="368" height="406" class="float_right" />
