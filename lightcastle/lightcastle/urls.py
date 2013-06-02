@@ -9,8 +9,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^about/', TemplateView.as_view(template_name="about.html")),
-    url(r'^sysadmin/', TemplateView.as_view(template_name="sysadmin.html")),
+    url(r'^about', TemplateView.as_view(template_name="about.html")),
+    url(r'^sysadmin', TemplateView.as_view(template_name="sysadmin.html")),
+    url(r'^webdev', TemplateView.as_view(template_name="webdev.html")),
+    url(r'^analysis', TemplateView.as_view(template_name="analysis.html")),
     url(r'^', TemplateView.as_view(template_name="index.html")), #
     url(r'^login/', include(admin.site.urls)),
 
