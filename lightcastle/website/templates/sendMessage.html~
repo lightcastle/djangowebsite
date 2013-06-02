@@ -1,8 +1,6 @@
-<!---#{extends 'subpage.html' /}
+#{extends 'subpage.html' /}
 #{set title:'Contact Us' /}
 #{set section:'contact' /}
--->
-<link rel="stylesheet" href={{ STATIC_URL }}main.css />
 
 <div id="content_container">
     <h2>Thank you.</h2>
