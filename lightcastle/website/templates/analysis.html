@@ -1,15 +1,15 @@
+
+<link rel="stylesheet" href={{ STATIC_URL }}main.css />
+<!---
 #{extends 'subpage.html' /}
 #{set title:'Analysis and Documentation' /}
 #{set section:'analysis' /}
-#{set 'quote'}
+#{set 'quote'}-->
 <p>"... [Dan is] very gifted at collecting and distilling complicated ideas
     (technology infrastructure, organizational issues, project plans, etc.) into
     easily understandable diagrams and documents."</p>
 <div class="source"><b>Andy Harbick</b>, <i>Senior Director, Rosetta Stone</i></div>
-#{/}
 
-
-<link rel="stylesheet" href={{ STATIC_URL }}main.css />
 
 <div id="content_container">
     <h2>Accountability. Brevity. Clarity.</h2>
@@ -33,3 +33,4 @@
     </ul>
     #{doc_stories /}
 </div>
+{% include "main.html" %}

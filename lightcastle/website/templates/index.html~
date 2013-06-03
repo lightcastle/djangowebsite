@@ -1,11 +1,11 @@
-<!---#{extends 'main.html' /}
-#{set title:'Linux System Administration | Web Development' /}
+{% include "main.html" %}
+<!---#{set title:'Linux System Administration | Web Development' /}
 
 #{set 'moreStyles'}
   #{stylesheet id:'index', media:'screen', src:'index.css' /}
 #{/}
 -->
-
+<link rel="stylesheet" href={{ STATIC_URL }}index.css />
 <div id="header">
     <p><strong><a href="/about/">Learn more about us.</a></strong></p>
 </div>

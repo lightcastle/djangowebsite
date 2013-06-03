@@ -1,8 +1,9 @@
+{% extends "main.html" %}
 <!---#{extends 'subpage.html' /}
 #{set title:'About LightCastle' /}
 #{set section:'about' /}
 -->
-<link rel="stylesheet" href={{ STATIC_URL }}style.css />
+<link rel="stylesheet" href={{ STATIC_URL }}main.css />
 <div id="content_container">
     <h2>A Little About Us</h2>
     <p>
