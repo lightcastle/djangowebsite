@@ -1,11 +1,8 @@
 {% extends "subpage.html" %}
 {% block title %}About LightCastle{% endblock %}
-{% block content %}
 
-<!---#{extends 'subpage.html' /}
-#{set title:'About LightCastle' /}
-#{set section:'about' /}
--->
+{%block section%}about{%endblock%}
+{% block content %}
 
 <div id="content_container">
     <h2>A Little About Us</h2>
@@ -20,10 +17,10 @@
             But we share your pragmatic approach to technological solutions that expedite business goals.</p>
     <h3>Learn more about our Principals:</h3>
     <ul>
-        <li><a href="/static/People/tamara.html">Tamara Funk</a></li>
-        <li><a href="/static/People/dan.html">Dan Funk</a></li>
-        <li><a href="/static/People/fred.html">Fred McDavid</a></li>
-        <li><a href="/static/People/josh.html">Josh Brown</a></li>
+        <li><a href="/tamara.html">Tamara Funk</a></li>
+        <li><a href="/dan.html">Dan Funk</a></li>
+        <li><a href="/fred.html">Fred McDavid</a></li>
+        <li><a href="/josh.html">Josh Brown</a></li>
     </ul>
     <h3>Why LightCastle as our moniker?</h3>
     <p>The New Point Lighthouse located on the wispy Chesapeake Bay has stood resolutely

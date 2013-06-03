@@ -4,11 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta charset="${_response_encoding}">
     <title>{% block title %}{% endblock %}</title>
-<!---    #{stylesheet id:'contact', media:'screen', src:'contact.css' /}
-    #{stylesheet id:'custom', media:'screen', src:'custom-theme/jquery-ui-1.8.18.custom.css' /}
-    #{get 'moreStyles' /}-->
     <link rel="stylesheet" type="text/css" href={{ STATIC_URL }}contact.css>
-<!---    <script type="text/javascript" src="/static/jquery-ui-1.8.18.custom.css" ></script>-->
     <link rel="shortcut icon" type="image/png" href="/static/images/favicon.png">
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
@@ -17,12 +13,10 @@
     </script>
 <!---    #{get 'moreScripts' /}-->
 </head>
-{% block navbar %}{% endblock %}
-{% block content %}
 
-{% endblock%}
 <body>
-<!---#{doLayout /}-->
+{% block navbar %}THIS CAN BE OVERRIDDEN{% endblock %}
+{% block content %}CAN OVErRIDE THIS!{% endblock%}<!---#{doLayout /}-->
 <div id="footernav_container">
     <a href="/sysadmin/">System Administration</a> • <a href="/webdev/">Web Development</a> • <a href="/analysis/">Analysis & Documentation</a> • <a href="/about/">About Us</a> • <a class="contact" href="/contact/">Contact Us</a> • <a class="contact" href="http://blog.lightcastletech.com">Blog</a></div>
 <div id="footer">© Copyright LightCastle Technical Consulting. All rights reserved.</div>
