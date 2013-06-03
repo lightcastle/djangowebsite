@@ -8,6 +8,7 @@ information search and discovery architecture with the latest
 technologies that our client thought was absolutely fantastic."</p>
 <div class="source"><b>Sue Rowell</b>, <i>PMP, Battelle Memorial Institute</i></div>
 {%endblock%}
+{% block section %}webdev{% endblock %}
 {% block content %}
 
 <div id="content_container">
@@ -35,7 +36,7 @@ technologies that our client thought was absolutely fantastic."</p>
         Let’s face it--things change. Ideas and strategies evolve, requirements morph, and technology offers unexpected
         results. So that’s why we’re committed to remaining nimble as we provide you visibility into each iteration
         of development, collaborating on your ideas.</p>
-    #{wd_stories /}
+    {% block wd_stories %}{% endblock %}
 
 </div>
 {% endblock %}

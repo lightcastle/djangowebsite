@@ -2,7 +2,7 @@
 {% block title %}Custom Ruby Web Development and Enhancement {% endblock %}
 {%block section%}webdev{%endblock%}
 
-{%block wd_stories%}
+
 <div id="content_container">
     <h2>Custom Ruby Web Development and Enhancement</h2>
     <div id="col1">
@@ -33,4 +33,3 @@
 
 
 </div>
-{% endblock %}

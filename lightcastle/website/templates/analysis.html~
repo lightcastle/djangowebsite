@@ -1,10 +1,14 @@
 {% extends "subpage.html" %}
 {% block title %}Analysis and Documentation {% endblock %}
 {% block section %}analysis{% endblock %}
+
+
 {%block quote%}<p>"... [Dan is] very gifted at collecting and distilling complicated ideas
     (technology infrastructure, organizational issues, project plans, etc.) into
     easily understandable diagrams and documents."</p>
-<div class="source"><b>Andy Harbick</b>, <i>Senior Director, Rosetta Stone</i></div>{%endblock%}
+<div class="source"><b>Andy Harbick</b>, <i>Senior Director, Rosetta Stone</i></div>
+{%endblock%}
+
 
 {% block content %}
 

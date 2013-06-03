@@ -1,7 +1,7 @@
-{% extends "main.html" %}
+{% extends "subpage.html" %}
 {% block title %}Linux System Adminstration{% endblock %}
 {% block content %}
-
+{% block section %}sysadmin{% endblock %}
 <link rel="stylesheet" href={{ STATIC_URL }}main.css />
 
 <div id="content_container">

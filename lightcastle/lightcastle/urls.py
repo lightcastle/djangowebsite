@@ -18,9 +18,9 @@ urlpatterns = patterns('',
     url(r'^dan', TemplateView.as_view(template_name="dan.html")),
     url(r'^tamara', TemplateView.as_view(template_name="tamara.html")),
     url(r'^fred', TemplateView.as_view(template_name="fred.html")),
-
-    url(r'^', TemplateView.as_view(template_name="index.html")), #
     url(r'^login/', include(admin.site.urls)),
+    url(r'^', TemplateView.as_view(template_name="index.html")), #
+
 
 
 

@@ -1,4 +1,4 @@
-{% extends "main.html" %}
+{% extends "subpage.html" %}
 {% block title %}Contact Us{% endblock %}
 <link rel="stylesheet" href={{ STATIC_URL }}contact.css />
 {% block content %}
