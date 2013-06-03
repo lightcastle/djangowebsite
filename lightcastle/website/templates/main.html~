@@ -15,8 +15,8 @@
 </head>
 
 <body>
-{% block navbar %}THIS CAN BE OVERRIDDEN{% endblock %}
-{% block content %}CAN OVErRIDE THIS!{% endblock%}<!---#{doLayout /}-->
+{% block navbar %}{% endblock %}
+{% block content %}{% endblock%}<!---#{doLayout /}-->
 <div id="footernav_container">
     <a href="/sysadmin/">System Administration</a> • <a href="/webdev/">Web Development</a> • <a href="/analysis/">Analysis & Documentation</a> • <a href="/about/">About Us</a> • <a class="contact" href="/contact/">Contact Us</a> • <a class="contact" href="http://blog.lightcastletech.com">Blog</a></div>
 <div id="footer">© Copyright LightCastle Technical Consulting. All rights reserved.</div>
