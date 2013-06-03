@@ -1,9 +1,6 @@
 {% extends "main.html" %}
+{% block content %}
 <link rel="stylesheet" href={{ STATIC_URL }}main.css />
-<!---#{extends 'subpage.html' /}
-#{set title:'Custom Web Development in Ruby and Java' /}
-#{set section:'webdev' /}
-#{set 'quote'}-->
 <p>"... Dan demonstrated innovation and leadership in designing an
 information search and discovery architecture with the latest
 technologies that our client thought was absolutely fantastic."</p>
@@ -37,3 +34,4 @@ technologies that our client thought was absolutely fantastic."</p>
     #{wd_stories /}
 
 </div>
+{% endblock %}

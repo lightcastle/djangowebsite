@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block navbar %}
+<link rel="stylesheet" href={{ STATIC_URL }}main.css />
+<div id="h_{%block section %}{%endblock%}" class="header_lvl{%block level%}{%endblock%}">
+    <div id="nav_bar">
+        <div class="navlast"></div>
+	<a href="http://blog.lightcastletech.com" class='navbutton'>Blog</a>
+	<a href="/contact/" class='navbutton'>Contact Us</a>
+
+	<a href="/about/" class='navbutton'>About Us</a>
+	<a href="/analysis/" class='navbutton'>Analysis & Documentation</a>
+	<a href="/webdev/" class='navbutton'>Web Development</a>
+	<a href="/sysadmin/" class='navbutton'>System Administration</a>
+	<a href="/index/" class='navbutton'>Home</a>
+        <div class="navfirst"></div>
+    </div>
+    <div id="quotation">#{get 'quote' /}</div>
+</div>
+{% endblock %}
+
+#{doLayout /}
+

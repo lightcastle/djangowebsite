@@ -1,14 +1,7 @@
-<!---{%extends index.html%}-->
-<!---{% extends "main.html" %}-->
+{% extends "main.html" %}
+{% block title %}Contact Us{% endblock %}
 <link rel="stylesheet" href={{ STATIC_URL }}contact.css />
-<!---#{extends 'subpage.html' /}
-#{set title:'Contact Us' /}
-#{set section:'contact' /}
-
-#{set 'moreScripts'}
-    #{stylesheet id:'contactstype', src:'contact.css'/}
-#{/set}
--->
+{% block content %}
 <div id="content_container">
     <h2>Email us using the form below, or give us a call</h2>
     <div id="col1">
@@ -43,4 +36,4 @@
     </div>
     <div class="clear_both"></div>
 </div>
-{% include "main.html" %}
+{% endblock %}

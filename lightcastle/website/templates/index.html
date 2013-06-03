@@ -1,11 +1,13 @@
-{% include "main.html" %}
-<!---#{set title:'Linux System Administration | Web Development' /}
-
+{% extends "main.html" %}
+{% block title %} Linux System Administration | Web Development{%endblock %}
+<!---
 #{set 'moreStyles'}
   #{stylesheet id:'index', media:'screen', src:'index.css' /}
 #{/}
 -->
+{% block content %}
 <link rel="stylesheet" href={{ STATIC_URL }}index.css />
+
 <div id="header">
     <p><strong><a href="/about/">Learn more about us.</a></strong></p>
 </div>
@@ -39,3 +41,4 @@
     </div>
     <div class="clear_both"></div>
 </div>
+{% endblock%}

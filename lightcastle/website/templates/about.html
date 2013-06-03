@@ -1,9 +1,12 @@
-{% extends "main.html" %}
+{% extends "subpage.html" %}
+{% block title %}About LightCastle{% endblock %}
+{% block content %}
+
 <!---#{extends 'subpage.html' /}
 #{set title:'About LightCastle' /}
 #{set section:'about' /}
 -->
-<link rel="stylesheet" href={{ STATIC_URL }}main.css />
+
 <div id="content_container">
     <h2>A Little About Us</h2>
     <p>
@@ -38,3 +41,4 @@
             established international companies. LightCastle is steadfast in supporting your IT and software development needs.</p>
 
 </div>
+{% endblock %}

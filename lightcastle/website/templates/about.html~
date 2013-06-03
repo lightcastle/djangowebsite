@@ -1,4 +1,7 @@
-{% extends "main.html" %}
+{% extends "subpage.html" %}
+{% block title %}About LightCastle{% endblock %}
+{% block content %}
+
 <!---#{extends 'subpage.html' /}
 #{set title:'About LightCastle' /}
 #{set section:'about' /}
@@ -38,3 +41,4 @@
             established international companies. LightCastle is steadfast in supporting your IT and software development needs.</p>
 
 </div>
+{% endblock %}

@@ -1,8 +1,11 @@
+{% extends "subpage.html" %}
+{% block title %}Analysis and Documentation {% endblock %}
+{% block section %}analysis{% endblock %}
+{% block content %}
 
 <link rel="stylesheet" href={{ STATIC_URL }}main.css />
+
 <!---
-#{extends 'subpage.html' /}
-#{set title:'Analysis and Documentation' /}
 #{set section:'analysis' /}
 #{set 'quote'}-->
 <p>"... [Dan is] very gifted at collecting and distilling complicated ideas
@@ -33,4 +36,4 @@
     </ul>
     #{doc_stories /}
 </div>
-{% include "main.html" %}
+{% endblock %}

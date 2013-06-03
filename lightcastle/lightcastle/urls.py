@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^sysadmin', TemplateView.as_view(template_name="sysadmin.html")),
     url(r'^webdev', TemplateView.as_view(template_name="webdev.html")),
     url(r'^analysis', TemplateView.as_view(template_name="analysis.html")),
+    url(r'^contact', TemplateView.as_view(template_name="contact.html")),
     url(r'^', TemplateView.as_view(template_name="index.html")), #
     url(r'^login/', include(admin.site.urls)),
 
