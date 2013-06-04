@@ -7,7 +7,7 @@
 <div id="content_container">
     <h2>Email us using the form below, or give us a call</h2>
     <div id="col1">
-            <form id="contact-form" method="post" action="sendMessage.html">
+            <form id="contact-form" method="post" action="sendMessage.html">{% csrf_token %}
                 <fieldset>
                     <label for="name">Name:</label><input type="text" name="name" id="name"  placeholder="John Smith" required="required" class="text ui-widget-content ui-corner-all" />
                     <label for="email">Email:</label><input type="text" name="email" id="Email" placeholder="john@smiths.org" required="required" value="" class="text ui-widget-content ui-corner-all" />
