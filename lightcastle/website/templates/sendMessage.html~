@@ -1,7 +1,12 @@
+{% extends "main.html" %}
 <!---#{extends 'subpage.html' /}
 #{set title:'Contact Us' /}
 #{set section:'contact' /}
 -->
+{% block section %}2_contact{% endblock %}
+{%block level%}2{%endblock%}
+
+
 <link rel="stylesheet" href={{ STATIC_URL }}contact.css />
 
 <div id="content_container">

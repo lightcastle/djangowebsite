@@ -1,3 +1,4 @@
+{% extends "subpage.html" %}
 <hr />
 <h3>System Administration Success Stories</h3>
 <ul class="stories">

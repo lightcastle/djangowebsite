@@ -1,7 +1,6 @@
 {%extends "subpage.html"%}
 {%block title%}Preventing Outages using Open Source Monitoring{%endblock%}
-{% block section %}3_sysadmin{% endblock %}
-{%block level%}3{%endblock%}
+{%block section%}sysadmin{%endblock%}
 {%block content%}
 <div id="content_container">
     <div id="col1">

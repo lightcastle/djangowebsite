@@ -2,7 +2,7 @@
 
 {% block navbar %}
 <link rel="stylesheet" href={{ STATIC_URL }}main.css />
-<div id="h2_"{%block section %}{%endblock%} class="header_lvl2">
+<div id="h{%block section %}{%endblock%}" class="header_lvl2">
     <div id="nav_bar">
         <div class="navlast"></div>
 			<a href="http://blog.lightcastletech.com" class='navbutton'>Blog</a>

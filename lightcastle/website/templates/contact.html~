@@ -1,5 +1,7 @@
 {% extends "subpage.html" %}
 {% block title %}Contact Us{% endblock %}
+{% block section %}2_contact{% endblock %}
+{%block level%}2{%endblock%}
 <link rel="stylesheet" href={{ STATIC_URL }}contact.css />
 {% block content %}
 <div id="content_container">

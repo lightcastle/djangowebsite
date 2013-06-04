@@ -1,6 +1,7 @@
 {% extends "subpage.html" %}
 {% block title %}Linux System Adminstration{% endblock %}
-{% block section %}sysadmin{% endblock %}
+{% block section %}2_sysadmin{% endblock %}
+{%block level%}2{%endblock%}
 {% block content %}
 <link rel="stylesheet" href={{ STATIC_URL }}main.css />
 
@@ -25,6 +26,6 @@
         <li>Documentation and High-Touch Communication</li>
         <li>Supporting Software</li>
     </ul>
-    #{sa_stories /}
+    {%include "sa_stories.html"%}
 </div>
 {% endblock %}

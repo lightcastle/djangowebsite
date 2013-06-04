@@ -17,7 +17,7 @@
         Gem. Blacklight can run effectively in both Ruby 1.8.7 and Ruby 1.9.2, and can be deployed for the first time in a Java Servlet
         context.  Additionally, Funk helped set up the Continuous Integration environment for the project--and created scripts that
         would fully test the software across the matrix of these environments. </p>
-       #{wd_stories /}
+        {% include "wd_stories.html"%}
     </div>
     <div id="col2">
         <p><div class="quote"></div><i>Dan Funk is a joy to have as a project contributor. Last year,

@@ -1,7 +1,6 @@
 {%extends "subpage.html"%}
 {%block title%}Detailed diagrams&mdash;as useful as they are attractive{%endblock%}
-{% block section %}3_analysis{% endblock %}
-{%block level%}3{%endblock%}
+{%block section%}analysis{%endblock%}
 {%block content%}
 <div id="content_container">
     <h2>Detailed diagrams&mdash;as useful as they are attractive</h2>

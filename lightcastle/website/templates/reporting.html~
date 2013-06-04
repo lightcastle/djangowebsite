@@ -1,6 +1,6 @@
 {%extends "subpage.html"%}
 {%block title%}Up-to-the-minute Reporting{%endblock%}
-{% block section %}3_analysis{% endblock %}
+{% block section %}3_reporting{% endblock %}
 {%block level%}3{%endblock%}
 {%block content%}
 <div id="content_container">

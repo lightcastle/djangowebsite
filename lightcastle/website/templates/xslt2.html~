@@ -1,7 +1,6 @@
 {% extends "subpage.html" %}
 {% block title %}Dublin Core and Blacklight with UVA{% endblock %}
-{% block section %}3_webdev{% endblock %}
-{%block level%}3{%endblock%}
+{%block section%}webdev{%endblock%}
 {% block content %}
 <div id="content_container" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
      xmlns="http://www.w3.org/1999/html">

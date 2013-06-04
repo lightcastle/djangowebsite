@@ -1,7 +1,7 @@
 {% extends "subpage.html" %}
 {% block title %}Analysis and Documentation {% endblock %}
-{% block section %}analysis{% endblock %}
-
+{% block section %}2_analysis{% endblock %}
+{%block level%}2{%endblock%}
 
 {%block quote%}<p>"... [Dan is] very gifted at collecting and distilling complicated ideas
     (technology infrastructure, organizational issues, project plans, etc.) into
@@ -32,6 +32,6 @@
         <li>Notifications of System Problems</li>
         <li>Detailed or High-level Diagrams</li>
     </ul>
-    #{doc_stories /}
+    {% include "doc_stories.html" %}
 </div>
 {% endblock %}

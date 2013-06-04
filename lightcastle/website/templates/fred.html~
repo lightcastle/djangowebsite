@@ -1,7 +1,7 @@
 {%extends 'subpage.html'%}
 {%block title%}Fred McDavid{%endblock%}
 {%block section%}about{%endblock%}
-
+{%block content%}
 <div id="content_container">
     <h2>Fred McDavid</h2>
     <p> <img src="/static/images/fred.jpg" alt="Fred McDavid" width="368" height="491" class="float_right" />
@@ -9,3 +9,4 @@ Fred McDavid graduated from with a BS in Computer Science from Radford Universit
  </div>
 
 </br clear="both">
+{%endblock%}
