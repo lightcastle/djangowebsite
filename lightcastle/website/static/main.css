@@ -129,6 +129,7 @@ body {
 	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;
 }
 
+
 #content_container {
 	width:750px;
 	background:#FEFEFE url(/static/images/content_bg.jpg) bottom left repeat-x;
@@ -163,6 +164,16 @@ div.quote {
     padding: 0 10px 0px 0;
 
 }
+
+body#activecontact a#contact {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
+body#activeabout a#about {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
+body#activeanalysis a#analysis {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
+body#activewebdev a#webdev {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
+body#activesysadmin a#sysadmin {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
+body#activeindex a#index {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
+
+
+
 
 #footernav_container {
 	width:100%;
