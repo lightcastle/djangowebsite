@@ -8,13 +8,13 @@
 <div id="content_container">
     <h2>Email us using the form below, or give us a call</h2>
     <div id="col1">
-            <form id="contact-form" method="post" action="sendMessage.html">{% csrf_token %}
-                <fieldset>
+            <form id="contact-form" method="post" action="/sendMessage">
+                <fieldset><!---{{ form.as_p }}-->
                     <label for="name">Name:</label><input type="text" name="name" id="name"  placeholder="John Smith" required="required" class="text ui-widget-content ui-corner-all" />
                     <label for="email">Email:</label><input type="text" name="email" id="Email" placeholder="john@smiths.org" required="required" value="" class="text ui-widget-content ui-corner-all" />
                     <label for="message">Message:</label><textarea name="message" id="message" placeholder="Please type your message" required="required" cols="60" rows="6" class="ui-widget-content ui-corner-all"></textarea>
                 </fieldset>
-                <input type="submit" value="send" id="email_button"/>
+                <input type="submit" value="send" id="email_button"/>{% csrf_token %}
             </form>
     </div>
     <div id="col2">

@@ -1,12 +1,13 @@
 from django.conf.urls import patterns, include, url
-
-
+from django.contrib.syndication.views import Feed
+from website.feeds import Blog
 from django.conf.urls import patterns, url, include
 from website.views import TemplateView
 
+from website.forms import ContactForm
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+#from django.contrib import admin
+#admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^about/josh', TemplateView.as_view(template_name="people/josh.html")),
@@ -27,9 +28,13 @@ urlpatterns = patterns('',
     url(r'^analysis/mops', TemplateView.as_view(template_name="analysis/mops.html")),
     url(r'^analysis/reporting', TemplateView.as_view(template_name="analysis/reporting.html")),
     url(r'^analysis', TemplateView.as_view(template_name="analysis.html")),
-    url(r'^contact', TemplateView.as_view(template_name="contact.html")),
+    url(r'^contact', 'website.views.get_form'),
+#    url(r'^contact', TemplateView.as_view(template_name="contact.html")),
+    url(r'^sendMessage', 'website.views.submit'),
+#TemplateView.as_view(template_name="sendMessage.html")),
+#    url(r'^feeds', Blog()),#'django.contrib.syndication.views.Feed', {'feed_dict': {"blog":"BlogFeed"}}),
     url(r'^', TemplateView.as_view(template_name="index.html")), #
-    url(r'^login/', include(admin.site.urls)),
+#    url(r'^login/', include(admin.site.urls)),
 
 
 

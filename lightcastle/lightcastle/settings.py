@@ -127,7 +127,11 @@ INSTALLED_APPS = (
 	'website',
 )
 
-
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'brownj@lightcastletech.com'
+EMAIL_HOST_PASSWORD = 'NOTMYACTUALPASSWORD84848484'
+EMAIL_PORT = 587
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

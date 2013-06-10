@@ -1,13 +1,15 @@
-{% extends "main.html" %}
+{% extends "subpage.html" %}
 <!---#{extends 'subpage.html' /}
 #{set title:'Contact Us' /}
 #{set section:'contact' /}
 -->
+{% block title %}Contact Us{% endblock %}
 {% block section %}3_contact{% endblock %}
 {%block level%}3{%endblock%}
+{% block page%}contact{% endblock %}
 
-
-<link rel="stylesheet" href={{ STATIC_URL }}contact.css />
+{%block content%}
+<link rel="stylesheet" href={{ STATIC_URL }}main.css />
 
 <div id="content_container">
     <h2>Thank you.</h2>
@@ -24,3 +26,4 @@
     </div>
     <div class="clear_both"></div>
 </div>
+{%endblock%}
