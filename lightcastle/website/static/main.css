@@ -173,7 +173,12 @@ body#activesysadmin a#sysadmin {	background:url(/static/images/nav_bg_dn.jpg) to
 body#activeindex a#index {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
 
 
-
+#blog_container {	width:100%;
+	border-top:solid 1px #CCC;
+	border-bottom:solid 1px #CCC;
+	padding:10px 0px 8px 0px;
+	text-align:center;
+}
 
 #footernav_container {
 	width:100%;
