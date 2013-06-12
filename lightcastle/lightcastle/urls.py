@@ -8,6 +8,8 @@ from website.forms import ContactForm
 # Uncomment the next two lines to enable the admin:
 #from django.contrib import admin
 #admin.autodiscover()
+feeds = {'blogs': Blog()}
+
 
 urlpatterns = patterns('',
     url(r'^about/josh', TemplateView.as_view(template_name="people/josh.html")),
@@ -32,7 +34,7 @@ urlpatterns = patterns('',
 #    url(r'^contact', TemplateView.as_view(template_name="contact.html")),
     url(r'^sendMessage', 'website.views.submit'),
 #TemplateView.as_view(template_name="sendMessage.html")),
-#    url(r'^feeds', Blog()),#'django.contrib.syndication.views.Feed', {'feed_dict': {"blog":"BlogFeed"}}),
+    url(r'^feeds', 'django.contrib.syndication.views.Feed', {'feed_dict':feeds}),
     url(r'^', TemplateView.as_view(template_name="index.html")), #
 #    url(r'^login/', include(admin.site.urls)),
 

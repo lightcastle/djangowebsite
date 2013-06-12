@@ -1,9 +1,10 @@
 # Django settings for lightcastle project.
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = False
 
 ADMINS = (
+    ('Tamara Funk', 'tamara@lightcastletech.com')
     # ('Your Name', 'your_email@example.com'),
 )
 
@@ -130,7 +131,7 @@ INSTALLED_APPS = (
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'brownj@lightcastletech.com'
-EMAIL_HOST_PASSWORD = 'NOTMYACTUALPASSWORD84848484'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 # A sample logging configuration. The only tangible logging
