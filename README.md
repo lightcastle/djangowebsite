@@ -62,7 +62,7 @@ We use capistrano for deployment.
 
 This should be taken care of in the deploy directory through the Gemfile. Just run
 
-bundle install
+  bundle install
 
 to get capistrano.
 
