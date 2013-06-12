@@ -40,7 +40,8 @@ Step 4: Install django
 Step 5: Update Configuration
 -------------------------
 
-edit lightcastle/settings.py, and update the database and smtp settings so that the database configuration has the correct user name and password and that your email address is setup in the smtp settings.
+edit lightcastle/settings.py.examtp settings so that your email address is setup in the smtp settings.
+save the file on your computer without the .example suffix.
     	
 Step 6: Start up the web server
 -----------------------
