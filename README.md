@@ -51,3 +51,20 @@ Step 6: Start up the web server
 Visit http://localhost:8000
 
 
+
+
+
+
+<h3>Deployment</h3>
+===========================
+
+We use capistrano for deployment. 
+
+This should be taken care of in the deploy directory through the Gemfile. Just run
+
+bundle install
+
+to get capistrano.
+
+
+
