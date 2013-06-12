@@ -15,8 +15,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'djangotest',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'djangouser',
-        'PASSWORD': 'djangopass',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
@@ -130,7 +130,7 @@ INSTALLED_APPS = (
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'dfunk@lightcastletech.com'
+EMAIL_HOST_USER = 'brownj@lightcastletech.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
