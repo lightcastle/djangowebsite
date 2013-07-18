@@ -67,5 +67,20 @@ This should be taken care of in the deploy directory through the Gemfile. Just r
 
 to get capistrano.
 
+After that, you should be able to do
+
+	cap deploy
+
+to deploy the code to the server. This is untested on machines other than Josh's right now.
 
 
+
+<h3>Changing The Site: Instructions</h3>
+===========================
+To change anything to the site, you should be able to just edit the file, then do 
+
+	git add [files you changed]; git commit -m "[some message about your commit]"
+	git push
+	cap deploy
+
+Note the above about cap deploy being untested on many machines.
