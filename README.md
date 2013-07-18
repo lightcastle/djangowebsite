@@ -55,8 +55,7 @@ Visit http://localhost:8000
 
 
 
-
-<h3>Deployment</h3>
+Deployment
 ===========================
 
 We use capistrano for deployment. 
@@ -75,7 +74,7 @@ to deploy the code to the server. This is untested on machines other than Josh's
 
 
 
-<h3>Changing The Site: Instructions</h3>
+Changing The Site: Instructions
 ===========================
 To change anything to the site, you should be able to just edit the file, then do 
 
@@ -84,3 +83,29 @@ To change anything to the site, you should be able to just edit the file, then d
 	cap deploy
 
 Note the above about cap deploy being untested on many machines.
+
+If you are adding a new page to the site, there are several things involved in this. The first thing you'll need to do is edit the lightcastle/urls.py The django framework will search through this file in order until it reaches the appropriate url, which are done as regular expressions. So in that file you'll see url('r^about/josh'.....) etc. After that you'll see 'r^about' ...  You have to haveit this way because if r^about was first, django would never get to r^(name) and you would therefore only have one about page. 
+
+A basic page should look something like this 
+
+  {% extends "subpage.html" %}
+  {% block title %}~~PAGE TITLE HERE~~{% endblock %}
+  {% block section %}2_sysadmin{% endblock %}
+  {%block level%}2{%endblock%}
+  {% block page%}sysadmin{% endblock %}
+  {% block content %}
+  <link rel="stylesheet" href={{ STATIC_URL }}main.css />
+  <div id="content_container">
+      ~~HTML CONTENT GOES HERE~~
+      {%include "~~stories/sa_stories.html~~~~this is where you can include other html files.  "%}
+  </div>
+  {% endblock %}
+
+
+
+
+
+
+
+
+
