@@ -64,7 +64,11 @@ This should be taken care of in the deploy directory through the Gemfile. Just r
 
 	bundle install
 
-inside your root directory (the one that has the Gemfile in it) to get capistrano.
+inside your root directory (the one that has the Gemfile in it) to get capistrano. If you do not have capistrano, you should be able to 
+
+	gem install capistrano
+
+to get it. <a href="http://guides.beanstalkapp.com/deployments/deploy-with-capistrano.html">This link</a> also seems to have some good documentation on it.
 
 After that, you should be able to do
 
