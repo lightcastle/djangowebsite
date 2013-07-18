@@ -65,7 +65,7 @@ This should be taken care of in the deploy directory through the Gemfile. Just r
 
 	bundle install
 
-to get capistrano.
+inside your root directory (the one that has the Gemfile in it) to get capistrano.
 
 After that, you should be able to do
 
