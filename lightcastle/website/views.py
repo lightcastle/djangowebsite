@@ -29,7 +29,6 @@ def submit(request):
           context = Context({'title': 'Contact Us', 'form': form})
 #          print form['name']
 #          print form['email']
-        form.save
 #        return HttpResponseRedirect('/sendMessage')
         return render_to_response('sendMessage.html', context, context_instance=RequestContext(request))
 
