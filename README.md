@@ -88,18 +88,18 @@ If you are adding a new page to the site, there are several things involved in t
 
 A basic page should look something like this 
 
-  {% extends "subpage.html" %}
-  {% block title %}~~PAGE TITLE HERE~~{% endblock %}
-  {% block section %}2_sysadmin{% endblock %}
-  {%block level%}2{%endblock%}
-  {% block page%}sysadmin{% endblock %}
-  {% block content %}
-  <link rel="stylesheet" href={{ STATIC_URL }}main.css />
-  <div id="content_container">
-      ~~HTML CONTENT GOES HERE~~
-      {%include "~~stories/sa_stories.html~~~~this is where you can include other html files.  "%}
-  </div>
-  {% endblock %}
+	{% extends "subpage.html" %}
+	{% block title %}~~PAGE TITLE HERE~~{% endblock %}
+	{% block section %}2_sysadmin{% endblock %}
+	{%block level%}2{%endblock%}
+	{% block page%}sysadmin{% endblock %}
+	{% block content %}
+	<link rel="stylesheet" href={{ STATIC_URL }}main.css />
+	<div id="content_container">
+	    ~~~HTML CONTENT GOES HERE~~~
+	    {%include "~~stories/sa_stories.html~~~~this is where you can include other html files.  "%}
+	</div>
+	{% endblock %}
 
 
 
