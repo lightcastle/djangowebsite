@@ -86,7 +86,7 @@ Note the above about cap deploy being untested on many machines.
 
 If you are adding a new page to the site, there are several things involved in this. The first thing you'll need to do is edit the lightcastle/urls.py The django framework will search through this file in order until it reaches the appropriate url, which are done as regular expressions. So in that file you'll see url('r^about/josh'.....) etc. After that you'll see 'r^about' ...  You have to haveit this way because if r^about was first, django would never get to r^(name) and you would therefore only have one about page. 
 
-A basic page should look something like this 
+A basic page should look something like this, and should be inside the templates/ directory (and under any relevant subdirectory)
 
 	{% extends "subpage.html" %}
 	{% block title %}~~PAGE TITLE HERE~~{% endblock %}
