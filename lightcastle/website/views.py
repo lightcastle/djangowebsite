@@ -24,7 +24,7 @@ def submit(request):
         form = ContactForm(request.POST)
         if form.is_valid():
           message=str(form.cleaned_data['message'])+"\n"+str(form.cleaned_data['email'])
-#          send_mail('Somebody filled out our contact form', message, 'brownj@lightcastletech.com', ['brownj@lightcastletech.com'], fail_silently=False)
+          send_mail('Somebody filled out our contact form', message, 'brownj@lightcastletech.com', ['brownj@lightcastletech.com'], fail_silently=False)
           print message
           context = Context({'title': 'Contact Us', 'form': form})
 #          print form['name']

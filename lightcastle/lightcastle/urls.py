@@ -2,7 +2,6 @@ from django.conf.urls.defaults import *
 
 from django.contrib.syndication.views import Feed
 from website.feeds import Blog
-from django.conf.urls import patterns, url, include
 from website.views import TemplateView
 
 from website.forms import ContactForm
