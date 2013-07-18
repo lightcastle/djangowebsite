@@ -70,7 +70,11 @@ inside your root directory (the one that has the Gemfile in it) to get capistran
 
 to get it. <a href="http://guides.beanstalkapp.com/deployments/deploy-with-capistrano.html">This link</a> also seems to have some good documentation on it.
 
-After that, you should be able to do
+Installing gems requires your computer to have Rubygems installed. You should be able to do this on an Ubuntu machine with 
+
+	sudo apt-get install rubygems
+
+I'm not sure how you install this on a mac, but a little googling should help with the install. After that, you should be able to do
 
 	cap deploy
 
