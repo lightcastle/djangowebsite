@@ -115,5 +115,20 @@ A basic page should look something like this, and should be inside the templates
 
 
 
+install git
+
+sudo aptitude install git 
+
+add ssh key to settings in github
+
+cloned into dir
+
+apt-get install bundler
+
+
+
+
+
+
 
 
