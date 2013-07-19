@@ -13,6 +13,8 @@ feeds = {'blogs': Blog()}
 
 urlpatterns = patterns('',
     url(r'^about/kendal', TemplateView.as_view(template_name="people/kendal.html")),
+    url(r'^about/amber', TemplateView.as_view(template_name="people/kendal.html")),
+    url(r'^about/kevin', TemplateView.as_view(template_name="people/kendal.html")),
     url(r'^about/josh', TemplateView.as_view(template_name="people/josh.html")),
     url(r'^about/dan', TemplateView.as_view(template_name="people/dan.html")),
     url(r'^about/tamara', TemplateView.as_view(template_name="people/tamara.html")),
