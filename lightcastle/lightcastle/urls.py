@@ -12,6 +12,7 @@ feeds = {'blogs': Blog()}
 
 
 urlpatterns = patterns('',
+    url(r'^blog/', include('wordpress.urls')),
     url(r'^about/kendal', TemplateView.as_view(template_name="people/kendal.html")),
     url(r'^about/amber', TemplateView.as_view(template_name="people/amber.html")),
     url(r'^about/kevin', TemplateView.as_view(template_name="people/kevin.html")),
