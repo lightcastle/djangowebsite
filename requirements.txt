@@ -26,7 +26,7 @@ duplicity==0.6.21
 httplib2==0.8
 lxml==3.2.0
 oauthlib==0.3.7
-oneconf==0.3.3
+oneconf==0.3.4
 pexpect==2.4
 piston-mini-client==0.7.5
 protobuf==2.4.1
@@ -34,13 +34,14 @@ pyOpenSSL==0.13
 pycrypto==2.6
 pycups==1.9.62
 pycurl==7.19.0
-pygobject==3.9.2
+pygobject==3.9.5
 pyinotify==0.9.3
 pyserial==2.6
 pysmbc==1.0.13
 python-apt==0.8.8.2ubuntu1
 python-cloudfiles==1.7.10
 python-debian==0.1.21-nmu2ubuntu1
+python-wordpress-xmlrpc==2.2
 pyxdg==0.25
 reportlab==2.6
 rhythmbox-ubuntuone==13.05
