@@ -33,3 +33,14 @@ def submit(request):
         return render_to_response('sendMessage.html', context, context_instance=RequestContext(request))
 
 
+
+
+
+
+
+
+
+
+
+
+

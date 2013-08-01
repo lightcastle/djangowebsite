@@ -17,3 +17,14 @@ class Blog(Feed):
     # item_link is only needed if NewsItem has no get_absolute_url method.
     def item_link(self, item):
         return reverse('news-item', args=[item.pk])
+
+
+
+
+from wordpress_xmlrpc import Client, WordPressPost
+from wordpress_xmlrpc.methods.posts import GetPosts, NewPost
+from wordpress_xmlrpc.methods.users import GetUserInfo
+
+
+all = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
+
