@@ -17,7 +17,7 @@ namespace :deploy do
     after deployment.
   DESC
   task :link_dependencies, :roles => :app do
-    run "ln -nfs ../../shared/settings.py #{release_path}/lightcastle/lightcastle/settings.py"
+    run "ln -nfs #{release_path}/lightcastle/lightcastle/settings.py shared/settings.py"
 #    run "ln -nfs #{shared_path}/public/images/posts #{release_path}/public/images/posts"
   end
 end
