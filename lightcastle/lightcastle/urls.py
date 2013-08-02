@@ -12,7 +12,7 @@ feeds = {'blogs': Blog()}
 
 
 urlpatterns = patterns('',
-    url(r'^blog', TemplateView.as_view(template_name="blog_home.html")),
+    url(r'^blog', 'website.feeds.get_posts')),
     url(r'^about/kendal', TemplateView.as_view(template_name="people/kendal.html")),
     url(r'^about/amber', TemplateView.as_view(template_name="people/amber.html")),
     url(r'^about/kevin', TemplateView.as_view(template_name="people/kevin.html")),
@@ -38,7 +38,7 @@ urlpatterns = patterns('',
 #    url(r'^contact', TemplateView.as_view(template_name="contact.html")),
     url(r'^sendMessage', 'website.views.submit'),
 #TemplateView.as_view(template_name="sendMessage.html")),
-    url(r'^feeds', 'django.contrib.syndication.views.Feed', {'feed_dict':feeds}),
+
     url(r'^', TemplateView.as_view(template_name="index.html")), #
 #    url(r'^login/', include(admin.site.urls)),
 

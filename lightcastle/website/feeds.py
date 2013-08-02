@@ -1,30 +1,11 @@
-from django.contrib.syndication.views import Feed
-
-class Blog(Feed):
-    title = 'Latest Blog Entries'
-    link = 'http://blog.lightcastletech.com/feed'
-    description = 'Latest entries'
-
-    def items(self):
-        return Blog.new#['poop', 'django', 'goes', 'word']#get_items("/blogs")
-
-    def item_title(self, item):
-        return item.title
-
-    def item_description(self, item):
-        return item.description
-
-    # item_link is only needed if NewsItem has no get_absolute_url method.
-    def item_link(self, item):
-        return reverse('news-item', args=[item.pk])
-
-
-
-
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods.posts import GetPosts, NewPost
 from wordpress_xmlrpc.methods.users import GetUserInfo
-
-
-all = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
+from django.shortcuts import render_to_response
+from django.template import Template, Context, RequestContext
+def get_posts(req):
+  wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', '')
+  all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
+  cont = Context({'title': 'Blog', 'all_posts': all_posts})
+  return render_to_response('blog_home.html', cont, context_instance=RequestContext(req))
 
