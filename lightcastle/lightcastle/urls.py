@@ -1,18 +1,17 @@
 from django.conf.urls.defaults import *
 
 from django.contrib.syndication.views import Feed
-from website.feeds import Blog
+from website.feeds import *
 from website.views import TemplateView
 
 from website.forms import ContactForm
 # Uncomment the next two lines to enable the admin:
 #from django.contrib import admin
 #admin.autodiscover()
-feeds = {'blogs': Blog()}
 
 
 urlpatterns = patterns('',
-    url(r'^blog', 'website.feeds.get_posts')),
+    url(r'^blog', 'website.feeds.get_posts'),
     url(r'^about/kendal', TemplateView.as_view(template_name="people/kendal.html")),
     url(r'^about/amber', TemplateView.as_view(template_name="people/amber.html")),
     url(r'^about/kevin', TemplateView.as_view(template_name="people/kevin.html")),
