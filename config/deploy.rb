@@ -8,6 +8,22 @@ set :deploy_via, :remote_cache
 server "54.243.182.84",   :web, :app, :db, :primary => true
 set :normalize_asset_timestamps, false
 
+
+after :deploy, 'deploy:link_dependencies'
+
+namespace :deploy do
+  desc <<-DESC
+    Creates symbolic links to configuration files and other dependencies
+    after deployment.
+  DESC
+  task :link_dependencies, :roles => :app do
+    run "ln -nfs settings.py #{release_path}/lightcastle/lightcastle/settings.py"
+#    run "ln -nfs #{shared_path}/public/images/posts #{release_path}/public/images/posts"
+  end
+end
+
+
+
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
