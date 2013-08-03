@@ -4,7 +4,7 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = False
-WORDPRESS_PASS = os.environ.get("WORDPRESS_PASS", "")
+WORDPRESS_PASS = os.environ.get("WORDPRESS_PASS")
 ADMINS = (
     ('Tamara Funk', 'tamara@lightcastletech.com')
     # ('Your Name', 'your_email@example.com'),
