@@ -13,12 +13,12 @@ def get_posts(req):
   cont = Context({'title': 'Blog', 'all_posts': all_posts})
   return render_to_response('blog_home.html', cont, context_instance=RequestContext(req))
 
-def get_specific_post(request, post_id):
+"""def get_specific_post(request, post_id):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   posts = wp.call(GetPosts(post_id)
   cont = Context({'title': 'Blog', 'all_posts': posts})
   return render_to_response('blog_home.html', cont, context_instance=RequestContext(request))
-
+"""
 
 
 
