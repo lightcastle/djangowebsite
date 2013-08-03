@@ -12,7 +12,7 @@ from website.forms import ContactForm
 
 urlpatterns = patterns('',
     url(r'^blog', 'website.feeds.get_posts'),
-    url(r'^blog/post/(P<id>\d+)', 'website.feeds.get_specific_post'),
+    url(r'^blog/post/(P<post_id>\d+)', 'website.feeds.get_specific_post'),
 
     url(r'^about/kendal', TemplateView.as_view(template_name="people/kendal.html")),
     url(r'^about/amber', TemplateView.as_view(template_name="people/amber.html")),
