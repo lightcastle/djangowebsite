@@ -67,12 +67,14 @@ body {
 #h2_analysis {background:url(/static/images/header2_analysis.jpg) top left no-repeat;}
 #h2_about {background:url(/static/images/header2_about.jpg) top left no-repeat;}
 #h2_contact {background:url(/static/images/header2_contact.jpg) top left no-repeat;}
+#h2_blog {background:url(/static/images/header2_blog.jpg) top left no-repeat;}
 
 #h3_sysadmin {background:url(/static/images/header3_sysadmin.jpg) top left no-repeat;}
 #h3_webdev {background:url(/static/images/header3_webdev.jpg) top left no-repeat;}
 #h3_analysis {background:url(/static/images/header3_analysis.jpg) top left no-repeat;}
 #h3_about {background:url(/static/images/header3_about.jpg) top left no-repeat;}
 #h3_contact {background:url(/static/images/header3_contact.jpg) top left no-repeat;}
+#h3_blog {background:url(/static/images/header3_blog.jpg) top left no-repeat;}
 
 #quotation {
     float: right;
@@ -171,7 +173,7 @@ body#activeanalysis a#analysis {	background:url(/static/images/nav_bg_dn.jpg) to
 body#activewebdev a#webdev {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
 body#activesysadmin a#sysadmin {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
 body#activeindex a#index {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
-
+body#activeblog a#blog {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
 
 #blog_container {	width:100%;
 	border-top:solid 1px #CCC;
