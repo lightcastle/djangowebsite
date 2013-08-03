@@ -8,10 +8,12 @@
 <div id="content_container">
     <h2>Our blog</h2>
     <p>
-      {% for blog in all_posts %}      
+      {% for blog in all_posts %}
+        {% autoescape off %}    
         {{ blog.title }}<br/>
         {{ blog.content }}<br/>
         <br/>
+        {% endautoescape %}
       {% endfor %}
 
     </p>
