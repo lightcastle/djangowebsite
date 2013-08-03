@@ -6,11 +6,11 @@
 {% block content %}
 
 <div id="content_container">
-    <h2>Our blog</h2>
+    <h1>Our blog</h1>
     <p>
       {% for blog in all_posts %}
         {% autoescape off %}    
-        {{ blog.title }}<br/>
+        <h2><center>{{ blog.title }}</center></h2><br/>
         {{ blog.content }}<br/>
         <br/>
         <hr/>
