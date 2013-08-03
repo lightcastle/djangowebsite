@@ -13,8 +13,6 @@ set :normalize_asset_timestamps, false
 #
 #cp /home/lc_web_user/lightcastletech.com/settings.py /home/lc_web_user/lightcastletech.com/current/lightcastle/lightcastle/settings.py"
 #    run "ln -nfs #{shared_path}/public/images/posts #{release_path}/public/images/posts"
-  end
-end
 
 
 
