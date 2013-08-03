@@ -9,15 +9,6 @@ server "54.243.182.84",   :web, :app, :db, :primary => true
 set :normalize_asset_timestamps, false
 
 
-after :deploy, 'deploy:link_dependencies'
-
-namespace :deploy do
-  desc <<-DESC
-    Creates symbolic links to configuration files and other dependencies
-    after deployment.
-  DESC
-  task :link_dependencies, :roles => :app do
-    run "python ../set_settings_path.py"
 #
 #
 #cp /home/lc_web_user/lightcastletech.com/settings.py /home/lc_web_user/lightcastletech.com/current/lightcastle/lightcastle/settings.py"
