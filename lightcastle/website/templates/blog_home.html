@@ -10,6 +10,8 @@
     <p>
       {% for blog in all_posts %}      
         {{ blog.title }}<br/>
+        {{ blog.content[:200] }}<br/>
+        <br/>
       {% endfor %}
 
     </p>
