@@ -10,6 +10,7 @@
       {% for blog in all_posts %}
         {% autoescape off %}    
         <h2><center>{{ blog.title }}</center></h2><br/>
+        {% url b_post blog.id %}
         {{ blog.content|truncatewords:50 }} ....<br/>
         <br/>
         <hr/>
