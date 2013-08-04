@@ -14,9 +14,11 @@ def get_posts(req):
   return render_to_response('blog_home.html', cont, context_instance=RequestContext(req))
 
 def get_specific_post(request, post_id):
+  post_id = int(post_id) - 1
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
-  post = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
-  context = Context({'title': 'Blog', 'blog_post': post[int(post_id)-1]})
+  blog_post = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
+  blog_post = blog_post[post_id]
+  context = Context({'title': 'Blog', 'blog_post': blog_post})
   return render_to_response('blog_post.html', context, context_instance=RequestContext(request))
 
 
