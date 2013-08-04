@@ -8,13 +8,12 @@
 <div id="content_container">
     <p>
         {% autoescape off %}    
-        <h2><center>{{ post.title }}</center></h2><br/>
-        {{ post.content }}<br/>
+        <h2><center>{{ blog_post.title }}</center></h2><br/>
+        {{ blog_post.content }}<br/>
         <br/>
         <hr/>
         <br/>
         {% endautoescape %}
-      {% endfor %}
 
     </p>
 </div>
