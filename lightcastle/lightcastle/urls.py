@@ -11,7 +11,7 @@ from website.forms import ContactForm
 
 
 urlpatterns = patterns('',
-    url(r'^blog/post/(\d+)$', 'website.feeds.get_specific_post'),
+
     url(r'^blog', 'website.feeds.get_posts'),
 
     url(r'^about/kendal', TemplateView.as_view(template_name="people/kendal.html")),
