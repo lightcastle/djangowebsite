@@ -9,7 +9,9 @@
     <p>
       {% for blog in all_posts %}
         {% autoescape off %}
-        <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></center></h2><br/>
+        <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a>
+        <br/>
+        {{ blog.author }}</center></h2><br/>
         {{ blog.content|truncatewords:50 }}<br/>
         <br/>
         <hr/>
