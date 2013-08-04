@@ -8,7 +8,7 @@
 <div id="content_container">
     <p>
       {% for blog in all_posts %}
-        {{ forloop.counter0 }}, {{ blog }}
+        {{ forloop.counter }}, {{ blog }}
         {% autoescape off %}
         <h2><center><a href="{% url b_post blog %}">{{ blog.title }}</a></center></h2><br/>
 
