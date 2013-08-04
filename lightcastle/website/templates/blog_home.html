@@ -10,7 +10,7 @@
       {% for blog in all_posts %}
         {% autoescape off %}    
         <h2><center>{{ blog.title }}</center></h2><br/>
-        {{ blog.content }}<br/>
+        {{ blog.content[:400] }} ....<br/>
         <br/>
         <hr/>
         <br/>
