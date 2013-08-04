@@ -7,12 +7,12 @@
 
 <div id="content_container">
     <p>
-      {% set index = 0 %}
+      {% with index = 0 %}
       {% for blog in all_posts %}
-        {% set index += 1 %}
+        {% with index += 1 %}
         {% autoescape off %}
         <h2><center><a href="{% url b_post index %}">{{ blog.title }}</a></center></h2><br/>
-
+        {% endwith %}{% endwith %}
         {{ blog.content|truncatewords:50 }}<br/>
         <br/>
         <hr/>
