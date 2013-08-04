@@ -7,9 +7,9 @@
 
 <div id="content_container">
     <p>
-      {% index = 0 %}
+      {% set index = 0 %}
       {% for blog in all_posts %}
-        {% index += 1 %}
+        {% set index += 1 %}
         {% autoescape off %}
         <h2><center><a href="{% url b_post index %}">{{ blog.title }}</a></center></h2><br/>
 
