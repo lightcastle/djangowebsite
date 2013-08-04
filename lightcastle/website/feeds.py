@@ -17,7 +17,6 @@ def get_specific_post(request, post_id):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   post = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'})
   context = Context({'title': 'Blog', 'blog_post': post[post_id-1]})
-  print post_id, post
   return render_to_response('blog_post.html', context, context_instance=RequestContext(request))
 
 
