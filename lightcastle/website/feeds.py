@@ -1,5 +1,5 @@
 from wordpress_xmlrpc import Client, WordPressPost
-from wordpress_xmlrpc.methods.posts import GetPosts, NewPost
+from wordpress_xmlrpc.methods.posts import GetPosts, NewPost, GetPost
 from wordpress_xmlrpc.methods.users import GetUserInfo
 from django.shortcuts import render_to_response
 from django.template import Template, Context, RequestContext
@@ -13,12 +13,12 @@ def get_posts(req):
   cont = Context({'title': 'Blog', 'all_posts': all_posts})
   return render_to_response('blog_home.html', cont, context_instance=RequestContext(req))
 
-"""def get_specific_post(request, post_id):
+def get_specific_post(request, post_id):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
-  posts = wp.call(GetPosts(post_id)
-  cont = Context({'title': 'Blog', 'all_posts': posts})
-  return render_to_response('blog_home.html', cont, context_instance=RequestContext(request))
-"""
+  post = wp.call(GetPost(post_id)
+  context = Context({'title': 'Blog', 'all_posts': post})
+  return render_to_response('blog_post.html', context, context_instance=RequestContext(request))
+
 
 
 

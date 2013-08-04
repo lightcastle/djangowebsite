@@ -1,0 +1,22 @@
+{% extends "subpage.html" %}
+{% block title %}The LightCastle Blog{% endblock %}
+{% block page%}blog{% endblock %}
+{% block section %}2_blog{% endblock %}
+{%block level%}2{%endblock%}
+{% block content %}
+
+<div id="content_container">
+    <p>
+      {% for blog in all_posts %}
+        {% autoescape off %}    
+        <h2><center>{{ post.title }}</center></h2><br/>
+        {{ post.content }}<br/>
+        <br/>
+        <hr/>
+        <br/>
+        {% endautoescape %}
+      {% endfor %}
+
+    </p>
+</div>
+{% endblock %}
