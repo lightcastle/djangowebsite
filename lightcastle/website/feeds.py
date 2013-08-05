@@ -5,6 +5,9 @@ from django.shortcuts import render_to_response
 from django.template import Template, Context, RequestContext
 import os
 from django.conf import settings
+import datetime
+
+
 
 def get_posts(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
