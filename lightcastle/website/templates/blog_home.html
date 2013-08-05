@@ -9,11 +9,11 @@
 <div id="content_container">
     <p>
       {% cache 10 allposts %}
+        {{ current_time }}
       {% for blog in all_posts %}
         {% autoescape off %}
         <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></center></h2>
         <br/>
-        {{ current_time }}
         {{ blog.author }}<br/>
         {{ blog.content|truncatewords:50 }}<br/>
         <br/>
