@@ -14,7 +14,7 @@ def get_posts(request):
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   current_time = "dook" #datetime.datetime.now()
   cont = Context({'title': 'Blog', 'all_posts': all_posts, 'current_time': "dook"})
-  return render_to_response('blog_home.html', cont, context_instance=RequestContext(request))
+  return render_to_response('blog_home.html', cont, context_instance=Context(request))
 
 def get_specific_post(request, post_id):
   post_id = int(post_id) - 1
