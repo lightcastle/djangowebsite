@@ -9,8 +9,10 @@ from django.core.cache import cache, get_cache
 
 
 def get_posts(request):
-  if cache.get('blog_posts') == True:
+  try cache.get('blog_posts'):
     return cache.get('blog_posts')
+  except:
+    pass
   else:
     wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
     all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
