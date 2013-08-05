@@ -9,6 +9,7 @@ from django.conf import settings
 def get_posts(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
+  current_time = datetime.datetime.now()
   cont = Context({'title': 'Blog', 'all_posts': all_posts})
   return render_to_response('blog_home.html', cont, context_instance=RequestContext(request))
 
