@@ -1,3 +1,4 @@
+{% load cache %}
 {% extends "subpage.html" %}
 {% block title %}The LightCastle Blog{% endblock %}
 {% block page%}blog{% endblock %}
@@ -7,6 +8,7 @@
 
 <div id="content_container">
     <p>
+      {% cache 10 allposts %}
       {% for blog in all_posts %}
         {% autoescape off %}
         <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a>
@@ -18,6 +20,7 @@
         <br/>
         {% endautoescape %}
       {% endfor %}
+      {% endcache %}
 
     </p>
 </div>
