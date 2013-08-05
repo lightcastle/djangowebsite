@@ -9,8 +9,7 @@
 <div id="content_container">
     <p>
       {% cache 10 allposts %}
-<!-- component_name {{host}} {{timestamp}} -->
-<!-- {% now "jS F Y H:i" %} --> 
+{% now "jS F Y H:i" %}
       {% for blog in all_posts %}
         {% autoescape off %}
         <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a>
