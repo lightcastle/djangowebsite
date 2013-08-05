@@ -9,11 +9,11 @@ from django.core.cache import cache, get_cache
 
 
 def get_posts(request):
-  try cache.get('blog_posts'):
-    return cache.get('blog_posts')
-  except:
-    pass
-  else:
+#  try cache.get('blog_posts'):
+#    return cache.get('blog_posts')
+#  except:
+#    pass
+#  else:
     wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
     all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
     cont = Context({'title': 'Blog', 'all_posts': all_posts})
