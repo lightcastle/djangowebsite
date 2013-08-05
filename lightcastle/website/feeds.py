@@ -10,7 +10,8 @@ from django.core.cache import cache, get_cache
 
 def get_posts(request):
   if cache.get('blog_posts', request):
-    return cache.get('blog)posts', request)
+    cont = Context({'title': 'Blog', 'all_posts': all_posts})
+    return render_to_response('blog_home.html', content, context_instance=RequestContext(cache.get('blog)posts', request)))
   else:
     wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
     all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
