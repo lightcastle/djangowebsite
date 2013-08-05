@@ -13,7 +13,7 @@
         {% autoescape off %}
         <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a>
         <br/>
-{% now "jS \f F Y H:i" %}
+{% now %}
         {{ blog.author }}</center></h2><br/>
         {{ blog.content|truncatewords:50 }}<br/>
         <br/>
