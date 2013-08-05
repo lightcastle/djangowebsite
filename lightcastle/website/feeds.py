@@ -15,7 +15,7 @@ def get_posts(request):
     wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
     all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
     cont = Context({'title': 'Blog', 'all_posts': all_posts})
-    cache.set('blog_posts', request, 21600)
+    cache.set('blog_posts', request, 10)
     return render_to_response('blog_home.html', cont, context_instance=RequestContext(request))
 
 def get_specific_post(request, post_id):
