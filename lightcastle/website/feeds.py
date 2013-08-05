@@ -9,7 +9,7 @@ from django.core.cache import cache, get_cache
 
 
 def get_posts(request):
-  if cache.get('blog_posts'):
+  if cache.get('blog_posts') == True:
     return cache.get('blog_posts')
   else:
     wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
