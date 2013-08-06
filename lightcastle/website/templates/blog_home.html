@@ -1,6 +1,5 @@
 {% extends "subpage.html" %}
-{% load markup %}
-{% load cache %}
+
 {% block title %}The LightCastle Blog{% endblock %}
 {% block page%}blog{% endblock %}
 {% block section %}2_blog{% endblock %}
@@ -10,11 +9,11 @@
 <div id="content_container">
         {{ current_time }}
     <p>
-      {% cache 21600 allposts %}
+
 
       {% for blog in all_posts %}
         {% autoescape off %}
-        <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></center></h2>
+        <h2><center><a href="{% url 'b_post' forloop.counter %}">{{ blog.title }}</a></center></h2>
         <br/>
         {{ blog.author }}<br/>
         {{ blog.content|truncatewords:50 }}<br/>
@@ -23,7 +22,7 @@
         <br/>
         {% endautoescape %}
       {% endfor %}
-      {% endcache %}
+
 
     </p>
 </div>
