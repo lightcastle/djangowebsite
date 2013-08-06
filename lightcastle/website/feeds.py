@@ -6,7 +6,7 @@ from django.template import Template, Context, RequestContext
 import os
 from django.conf import settings
 import datetime
-import markup
+import markdown
 
 
 
