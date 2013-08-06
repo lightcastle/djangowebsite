@@ -9,7 +9,7 @@
 <div id="content_container">
         {{ current_time }}
     <p>
-      {% cache 10 allposts %}
+      {% cache 21600 allposts %}
 
       {% for blog in all_posts %}
         {% autoescape off %}
