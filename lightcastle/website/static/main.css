@@ -173,7 +173,7 @@ body#activeanalysis a#analysis {	background:url(/static/images/nav_bg_dn.jpg) to
 body#activewebdev a#webdev {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
 body#activesysadmin a#sysadmin {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
 body#activeindex a#index {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
-body#activeblog a#blog {	background:url(/static/images/nav_bg_dn.jpg) top left repeat-x;}
+
 
 #blog_container {	width:100%;
 	border-top:solid 1px #CCC;

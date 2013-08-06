@@ -1,5 +1,5 @@
 {% extends "subpage.html" %}
-{% load markdown %}
+{% load markup %}
 {% load cache %}
 {% block title %}The LightCastle Blog{% endblock %}
 {% block page%}blog{% endblock %}
@@ -17,7 +17,7 @@
         <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></center></h2>
         <br/>
         {{ blog.author }}<br/>
-        {{ blog.content|truncatewords:50|markdown }}<br/>
+        {{ blog.content|truncatewords:50 }}<br/>
         <br/>
         <hr/>
         <br/>
