@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.markdown',
+    'django.contrib.markup',
 #    'wordpress',
     # Uncomment the next line to enable the admin:
 #    'django.contrib.admin',
