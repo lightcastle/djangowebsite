@@ -17,7 +17,7 @@
         <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></center></h2>
         <br/>
         {{ blog.author }}<br/>
-        {{ blog.content|truncatewords:50 }}<br/>
+        {{ blog.content|truncatewords:500|markdown }}<br/>
         <br/>
         <hr/>
         <br/>
