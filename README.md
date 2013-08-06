@@ -128,6 +128,26 @@ apt-get install bundler
 
 
 
+Dependencies
+
+python-markdown
+sudo aptitude install mysql-server php5-mysql php5 php5-memcache
+sudo apt-get install memcached
+sudo apt-get install php-pear
+sudo apt-get install build-essential
+sudo pecl install memcache
+sudo pip install python-memcached
+
+sudo pip install markdown pygments django-pagedown
+
+
+
+
+
+
+
+
+
 
 
 
