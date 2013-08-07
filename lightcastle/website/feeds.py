@@ -30,7 +30,8 @@ def get_specific_post(request, post_id):
 
 
 def _remove_wordpress_markup(source):
-  language = re.search(r'sourcecode language=\"(.*)\"', source, re.U)
+  substitute = source.content.replace(u'\xa0',u'')
+  language = re.search(r'\[sourcecode language=\"(.*)\"\]', substitute, re.U)
   parsed_content = re.sub(r'\[sourcecode language=.*\]', '<code class="+str(language.group())+">', source)
 #  remove [caption]
   return parsed_content
