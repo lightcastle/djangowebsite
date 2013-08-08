@@ -16,6 +16,20 @@
     </div>
 </div>
 
+    <p>
+      {% autoescape off %}
+      <h2><center><a href="{% url b_post 1 %}">{{ latest_post.title }}</a></center></h2>
+      <br/>
+      {{ latest_post.author }}<br/>
+      {{ latest_post.content|truncatewords:50 }}<br/>
+      <br/>
+      <hr/>
+      <br/>
+      {% endautoescape %}
+
+    </p>
+
+
 <div id="content_container">
     <div id="indexbox1" class="indexbox">
         <p><strong><a href="/analysis/">Analysis</a></strong></p>

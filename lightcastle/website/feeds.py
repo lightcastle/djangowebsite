@@ -32,6 +32,21 @@ def get_specific_post(request, post_id):
   return render_to_response('blog_post.html', context, context_instance=RequestContext(request))
 
 
+def get_latest_blog(request):
+  wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
+  all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
+  latest_post = all_posts[1]
+
+  latest_post.content = _remove_wordpress_markup(content.content)
+  latest_post.content = _remove_html_tags(content.content)
+
+  cont = Context({'title': 'Blog', 'latest_post': latest_post})
+  return render_to_response('index.html', cont, context_instance=RequestContext(request))
+
+
+
+
+
 def _remove_wordpress_markup(source):
   pattern_one = re.compile(r'\[sourcecode language="(.*)"\]')
   pattern_two = re.compile(r'\[caption.*?\]')

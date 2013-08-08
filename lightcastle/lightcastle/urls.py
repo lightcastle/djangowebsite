@@ -40,7 +40,7 @@ urlpatterns = patterns('',
     url(r'^sendMessage', 'website.views.submit'),
 #TemplateView.as_view(template_name="sendMessage.html")),
 
-    url(r'^', TemplateView.as_view(template_name="index.html")), #
+    url(r'^', 'website.feeds.get_latest_blog'),#TemplateView.as_view(template_name="index.html")), #
 #    url(r'^login/', include(admin.site.urls)),
 
 
