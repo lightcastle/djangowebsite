@@ -49,6 +49,8 @@ def _remove_href_tags(source):
   pattern_two = re.compile(r'<a href.*>')
   parsed_content = pattern_two.sub(r'', source)
   parsed_content = pattern_one.sub(r'', source)
+  pattern_three = re.compile(r'<img.*>')
+  parsed_content = pattern_three.sub(r'', source)
 
 #  parsed_content = re.sub(r'\[/sourcecode\]', '</code>', source)
 #  remove [caption]
