@@ -37,8 +37,8 @@ def get_latest_blog(request):
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   latest_post = all_posts[1]
 
-  latest_post.content = _remove_wordpress_markup(content.content)
-  latest_post.content = _remove_html_tags(content.content)
+  latest_post.content = _remove_wordpress_markup(latest_post.content)
+  latest_post.content = _remove_html_tags(latest_post.content)
 
   cont = Context({'title': 'Blog', 'latest_post': latest_post})
   return render_to_response('index.html', cont, context_instance=RequestContext(request))
