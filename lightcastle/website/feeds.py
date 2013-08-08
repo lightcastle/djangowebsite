@@ -13,7 +13,7 @@ import re
 def get_posts(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
-#  parsed_content = _remove_wordpress_markup(all_posts)
+
   for content in all_posts:
     content.content = _remove_wordpress_markup(content.content)
     content.content = _remove_html_tags(content.content)
@@ -33,13 +33,12 @@ def get_specific_post(request, post_id):
 
 
 def _remove_wordpress_markup(source):
-  pattern_one = re.compile(r'\[sourcecode language=\"(.*)\"?\]')
+  pattern_one = re.compile(r'\[sourcecode.*"(.*)\"?\]')
 
   pattern_two = re.compile(r'\[caption.*?\]')
   parsed_content = pattern_one.sub(r'[code class="+str(language.group())"]', source)
 
   parsed_content = pattern_two.sub(r'', source)
-#  parsed_content = re.sub(r'\[/sourcecode\]', '</code>', source)
 #  remove [caption]
   return parsed_content
   
@@ -47,9 +46,6 @@ def _remove_wordpress_markup(source):
 def _remove_html_tags(source):
   pattern_three = re.compile(r'<.*?>')
   parsed_content = pattern_three.sub(r'', source)
-
-#  parsed_content = re.sub(r'\[/sourcecode\]', '</code>', source)
-#  remove [caption]
   return parsed_content
 
 
