@@ -16,7 +16,7 @@ def get_posts(request):
 #  parsed_content = _remove_wordpress_markup(all_posts)
 
   current_time = datetime.datetime.now()
-  cont = Context({'title': 'Blog', 'all_posts': parsed_content, 'current_time': current_time})
+  cont = Context({'title': 'Blog', 'all_posts': all_posts, 'current_time': current_time})
   return render_to_response('blog_home.html', cont, context_instance=RequestContext(request))
 
 def get_specific_post(request, post_id):
@@ -31,6 +31,7 @@ def get_specific_post(request, post_id):
 
 def _remove_wordpress_markup(source):
   regex = re.compile(r'\[sourcecode language=\"(.*)\"\]')
+  pattern_two = re.compile(r'\[caption\]')
   parsed_content = regex.sub(r'[code class="+str(language.group())"]', source)
 #  parsed_content = re.sub(r'\[/sourcecode\]', '</code>', source)
 #  remove [caption]
