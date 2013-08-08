@@ -35,7 +35,7 @@ def get_specific_post(request, post_id):
 def get_latest_blog(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
-  latest_post = all_posts[1]
+  latest_post = all_posts[0]
 
   latest_post.content = _remove_wordpress_markup(latest_post.content)
   latest_post.content = _remove_html_tags(latest_post.content)
