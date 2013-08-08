@@ -15,7 +15,7 @@ def get_posts(request):
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
 #  parsed_content = _remove_wordpress_markup(all_posts)
   for content in all_posts:
-    content.content = _remove_wordpress_markup(post_previews.content)
+    content.content = _remove_wordpress_markup(content.content)
 
 
   current_time = datetime.datetime.now()
