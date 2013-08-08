@@ -45,9 +45,11 @@ def _remove_wordpress_markup(source):
   
 
 def _remove_href_tags(source):
-
-  pattern_two = re.compile(r'<a.*>')
+  pattern_one = re.compile(r'</a>')
+  pattern_two = re.compile(r'<a href.*>')
   parsed_content = pattern_two.sub(r'', source)
+  parsed_content = pattern_one.sub(r'', source)
+
 #  parsed_content = re.sub(r'\[/sourcecode\]', '</code>', source)
 #  remove [caption]
   return parsed_content
