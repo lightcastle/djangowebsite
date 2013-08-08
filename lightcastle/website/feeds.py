@@ -25,7 +25,7 @@ def get_specific_post(request, post_id):
   blog_post = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   blog_post = blog_post[post_id]
   parsed_content = _remove_wordpress_markup(blog_post)
-  context = Context({'title': 'Blog', 'blog_post': parsed_content})
+  context = Context({'title': 'Blog', 'blog_post': blog_post, 'post_content': parsed_content})
   return render_to_response('blog_post.html', context, context_instance=RequestContext(request))
 
 
