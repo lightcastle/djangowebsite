@@ -24,17 +24,14 @@ def get_specific_post(request, post_id):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   blog_post = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   blog_post = blog_post[post_id]
-  parsed_content = _remove_wordpress_markup(blog_post)
-  context = Context({'title': 'Blog', 'blog_post': blog_post, 'post_content': parsed_content})
+  blog_post.content = _remove_wordpress_markup(blog_post.content)
+  context = Context({'title': 'Blog', 'blog_post': blog_post})
   return render_to_response('blog_post.html', context, context_instance=RequestContext(request))
-
-
-
 
 
 def _remove_wordpress_markup(source):
   regex = re.compile(r'\[sourcecode language=\"(.*)\"\]')
-  parsed_content = regex.sub(r'[code class="+str(language.group())"]', source.content)
+  parsed_content = regex.sub(r'[code class="+str(language.group())"]', source)
 #  parsed_content = re.sub(r'\[/sourcecode\]', '</code>', source)
 #  remove [caption]
   return parsed_content
