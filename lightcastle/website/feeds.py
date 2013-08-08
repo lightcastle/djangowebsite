@@ -16,7 +16,7 @@ def get_posts(request):
 #  parsed_content = _remove_wordpress_markup(all_posts)
   for content in all_posts:
     content.content = _remove_wordpress_markup(content.content)
-    content.content = _remove_href_tags(content.content)
+    content.content = _remove_html_tags(content.content)
 
   current_time = datetime.datetime.now()
   cont = Context({'title': 'Blog', 'all_posts': all_posts, 'current_time': current_time})
@@ -44,12 +44,8 @@ def _remove_wordpress_markup(source):
   return parsed_content
   
 
-def _remove_href_tags(source):
-#  pattern_one = re.compile(r'<a>')
-#  pattern_two = re.compile(r'<a href.*>')
+def _remove_html_tags(source):
   pattern_three = re.compile(r'<.*?>')
-#  parsed_content = pattern_two.sub(r'', source)
-#  parsed_content = pattern_one.sub(r'', source)
   parsed_content = pattern_three.sub(r'', source)
 
 #  parsed_content = re.sub(r'\[/sourcecode\]', '</code>', source)
