@@ -35,11 +35,12 @@ def get_specific_post(request, post_id):
 def _remove_wordpress_markup(source):
   pattern_one = re.compile(r'\[sourcecode language="(.*)"\]')
   pattern_two = re.compile(r'\[caption.*?\]')
+  pattern_three = re.compile(r'\[/sourcecode\]')
 
   parsed_content = pattern_one.sub(r'[code class="\1"]', source)
-
   parsed_content = pattern_two.sub(r'', parsed_content)
-#  remove [caption]
+  parsed_content = pattern_three.sub(r'[/code]', parsed_content)
+
   return parsed_content
   
 
