@@ -10,6 +10,7 @@
 <div id="content_container">
         {{ current_time }}
     <p>
+      <div id="blog_container">
       {% cache 1 allposts %}
 
       {% for blog in all_posts %}
@@ -22,8 +23,17 @@
         <br/>
         {% endautoescape %}
       {% endfor %}
+      </div>
+    </p>
+
+    <div id="blog_content_bar">
+      {% for blog in all_posts %}
+        <a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/><center>* * *</center>
+
+      {% endfor %}
       {% endcache %}
 
-    </p>
+    </div>
+
 </div>
 {% endblock %}

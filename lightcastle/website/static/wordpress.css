@@ -1,3 +1,24 @@
+#blog_container {
+    width: 75%;
+    align: right;
+    text-align: justify;
+    float:left;
+    height:auto;
+
+}
+
+
+#blog_content_bar {
+    width: 20%;
+    align: right;
+    text-align: right;
+    float:right;
+
+    height:auto;
+
+}
+
+
 .alignnone {
     margin: 5px 20px 20px 0;
 }
