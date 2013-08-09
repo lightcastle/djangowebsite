@@ -1,6 +1,6 @@
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods.posts import GetPosts, NewPost, GetPost
-from wordpress_xmlrpc.methods.users import GetUserInfo
+from wordpress_xmlrpc.methods.users import GetUserInfo, GetAuthors
 from django.shortcuts import render_to_response
 from django.template import Template, Context, RequestContext
 import os
