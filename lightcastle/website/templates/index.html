@@ -18,9 +18,8 @@
 
     <p>
       {% autoescape off %}
-      <h2><center><a href="{% url b_post 1 %}">{{ latest_post.title }}</a></center></h2>
+      <center><h2><a href="{% url b_post 1 %}">{{ latest_post.title }}</a></h2></center>Author: {{ latest_post.author }}
       <br/>
-      {{ latest_post.author }}<br/>
       {{ latest_post.content|truncatewords:50 }}<br/>
       <br/>
       <br/>
