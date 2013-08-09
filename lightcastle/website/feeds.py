@@ -13,10 +13,13 @@ import re
 def get_posts(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
-
+  authors = wp.call(GetAuthors())
   for content in all_posts:
     content.content = _remove_wordpress_markup(content.content)
     content.content = _remove_html_tags(content.content)
+    for index in authors:
+      if index.id == content.user:
+        content.author = index.display_name 
 
   current_time = datetime.datetime.now()
   cont = Context({'title': 'Blog', 'all_posts': all_posts, 'current_time': current_time})
