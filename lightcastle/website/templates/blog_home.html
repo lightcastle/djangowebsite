@@ -14,11 +14,10 @@
 
       {% for blog in all_posts %}
         {% autoescape off %}
-        <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></center></h2>
+        <h2><center><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/>{{ blog.date }}<br/></center></h2>
         <br/>
         {{ blog.author }}<br/>
         {{ blog.content|truncatewords:50 }}<br/>
-        {{ blog.date }}
         <br/>
         <hr/>
         <br/>
