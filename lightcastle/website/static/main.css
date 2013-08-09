@@ -101,6 +101,12 @@ body {
 }
 
 
+
+.alignright {
+    margin: 0 0 10px 15px;
+    float:right;
+}
+
 .navfirst, .navbutton, .navlast {
 	display:block;
 	height:37px;

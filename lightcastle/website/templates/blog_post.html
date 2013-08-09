@@ -6,7 +6,6 @@
 {% block content %}
 
 <div id="content_container">
-    <p>
         {% autoescape off %}    
         <center><h2>{{ blog_post.title }}</h2>Published: {{ blog_post.date }}<br/>
         Author: {{ blog_post.author }}</center></h2><br/>
@@ -16,6 +15,5 @@
         <br/>
         {% endautoescape %}
 
-    </p>
 </div>
 {% endblock %}

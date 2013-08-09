@@ -33,6 +33,13 @@ def get_specific_post(request, post_id):
   authors = wp.call(GetAuthors())
   blog_post = blog_post[post_id]
   blog_post.content = _remove_wordpress_markup(blog_post.content)
+
+  new_content = ""
+  for line in blog_post.content.split("\n"):
+    new_content += "<p>"+line+"</p>\n"
+
+  blog_post.content=new_content
+
   for index in authors:
     if index.id == blog_post.user:
       blog_post.author = index.display_name 
