@@ -16,7 +16,9 @@
     </div>
 </div>
 
+<div id="content_container">
     <p>
+      <h3>Check out the latest from our Blog ...</h3>
       {% autoescape off %}
       <center><h2><a href="{% url b_post 1 %}">{{ latest_post.title }}</a></h2>Author: {{ latest_post.author }}</center>
       <br/>
@@ -24,9 +26,8 @@
       <br/>
       <br/>
       {% endautoescape %}
-
     </p>
-
+</div>
 
 <div id="content_container">
     <div id="indexbox1" class="indexbox">
