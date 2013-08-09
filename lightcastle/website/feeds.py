@@ -30,6 +30,12 @@ def get_specific_post(request, post_id):
   post_id = int(post_id) - 1
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   blog_post = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
+  authors = wp.call(GetAuthors())
+  for index in authors:
+    if index.id == blog_post.user:
+      blog_post.author = index.display_name 
+
+
   blog_post = blog_post[post_id]
   blog_post.content = _remove_wordpress_markup(blog_post.content)
   context = Context({'title': 'Blog', 'blog_post': blog_post})
@@ -40,6 +46,10 @@ def get_latest_blog(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   latest_post = all_posts[0]
+  authors = wp.call(GetAuthors())
+  for index in authors:
+    if index.id == latest_post.user:
+      latest_post.author = index.display_name 
 
   latest_post.content = _remove_wordpress_markup(latest_post.content)
   latest_post.content = _remove_html_tags(latest_post.content)

@@ -8,8 +8,8 @@
 <div id="content_container">
     <p>
         {% autoescape off %}    
-        <h2><center>{{ blog_post.title }}</h2><br/>
-        {{ blog_post.author }}</center></h2><br/>
+        <h2><center>{{ blog_post.title }}</h2>Published: {{ blog_post.date }}<br/>
+        Author: {{ blog_post.author }}</center></h2><br/>
         {{ blog_post.content }}<br/>
         <br/>
         <hr/>
