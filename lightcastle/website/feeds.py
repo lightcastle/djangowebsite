@@ -25,6 +25,7 @@ def get_posts(request):
   cont = Context({'title': 'Blog', 'all_posts': all_posts, 'current_time': current_time})
   return render_to_response('blog_home.html', cont, context_instance=RequestContext(request))
 
+
 def get_specific_post(request, post_id):
   post_id = int(post_id) - 1
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
