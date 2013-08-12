@@ -85,10 +85,10 @@ def _remove_wordpress_markup(source):
 
 def _remove_html_tags(source):
   pattern_three = re.compile(r'<.*?>')
-  parsed_content = pattern_three.sub(r'', source.encode('utf-8'))
+  parsed_content = pattern_three.sub(r'', source)
   return parsed_content
 
 def _get_first_image(source):
-  soup = BeautifulSoup(source)
+  soup = BeautifulSoup(source.encode('utf-8'))
   return soup.a
 
