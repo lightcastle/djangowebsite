@@ -1,3 +1,4 @@
+# -*- coding: ascii -*-
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods.posts import GetPosts, NewPost, GetPost
 from wordpress_xmlrpc.methods.users import GetUserInfo, GetAuthors
@@ -89,10 +90,6 @@ def _remove_html_tags(source):
   return parsed_content
 
 def _get_first_image(source):
-  pClnUp = re.compile(r'\n|\t|\xa0')
-  source_decoded=str(pClnUp.sub('', source))
-
-
-  soup = BeautifulSoup(source_decoded)
+  soup = BeautifulSoup(source.encode('utf-8'))
   return soup.a
 
