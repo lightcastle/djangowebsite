@@ -90,6 +90,6 @@ def _remove_html_tags(source):
   return parsed_content
 
 def _get_first_image(source):
-  soup = BeautifulSoup(source.encode('ascii', 'ignore')
+  soup = BeautifulSoup(source.encode('ascii', 'ignore'))
   return soup.a
 
