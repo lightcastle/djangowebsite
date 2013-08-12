@@ -89,6 +89,10 @@ def _remove_html_tags(source):
   return parsed_content
 
 def _get_first_image(source):
-  soup = BeautifulSoup(source.encode('utf-8'))
+  pClnUp = re.compile(r'\n|\t|\xa0')
+  source_decoded=str(pClnUp.sub('',source)
+
+
+  soup = BeautifulSoup(source_decoded)
   return soup.a
 
