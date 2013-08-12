@@ -9,14 +9,14 @@ import datetime
 import markdown
 import re
 from bs4 import BeautifulSoup
-
+from django.utils.encoding import smart_str
 
 def get_posts(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   authors = wp.call(GetAuthors())
   for blog in all_posts:
-    if _get_first_image(blog.content.encode('utf-8')) != None:
+    if _get_first_image(smart_str(blog.content)) != None:
       blog.image = _get_first_image(blog.content)
     blog.content = _remove_wordpress_markup(blog.content)
     blog.content = _remove_html_tags(blog.content)
