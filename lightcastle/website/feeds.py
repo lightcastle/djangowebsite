@@ -18,7 +18,7 @@ def get_posts(request):
   authors = wp.call(GetAuthors())
   for blog in all_posts:
     if _get_first_image(blog.content) != None:
-      blog.image = str(_get_first_image(blog.content))
+      blog.image = _get_first_image(blog.content)
     blog.content = _remove_wordpress_markup(blog.content)
     blog.content = _remove_html_tags(blog.content)
     for index in authors:
@@ -91,5 +91,5 @@ def _remove_html_tags(source):
 
 def _get_first_image(source):
   soup = BeautifulSoup(source.encode('ascii', 'ignore'))
-  return soup.a
+  return str(soup.img)
 
