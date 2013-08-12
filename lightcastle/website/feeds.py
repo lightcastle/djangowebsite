@@ -10,7 +10,7 @@ import datetime
 import markdown
 import re
 from bs4 import BeautifulSoup
-from django.utils.encoding import smart_str
+
 
 def get_posts(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
@@ -90,6 +90,6 @@ def _remove_html_tags(source):
   return parsed_content
 
 def _get_first_image(source):
-  soup = BeautifulSoup(source)
+  soup = BeautifulSoup(source.encode('ascii', 'ignore')
   return soup.a
 
