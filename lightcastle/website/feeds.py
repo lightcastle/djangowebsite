@@ -85,7 +85,7 @@ def _remove_wordpress_markup(source):
 
 def _remove_html_tags(source):
   pattern_three = re.compile(r'<.*?>')
-  parsed_content = pattern_three.sub(r'', source)
+  parsed_content = pattern_three.sub(r'', source.encode('ascii', 'ignore')
   return parsed_content
 
 def _get_first_image(source):
