@@ -16,8 +16,7 @@ def get_posts(request):
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   authors = wp.call(GetAuthors())
   for blog in all_posts:
-    if _get_first_image(blog.content) != None:
-      blog.image = _get_first_image(blog.content)
+    blog.image = _get_first_image(blog.content)
     blog.content = _remove_wordpress_markup(blog.content)
     blog.content = _remove_html_tags(blog.content)
     for index in authors:
