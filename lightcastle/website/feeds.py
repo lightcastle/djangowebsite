@@ -90,7 +90,7 @@ def _remove_html_tags(source):
 
 def _get_first_image(source):
   pClnUp = re.compile(r'\n|\t|\xa0')
-  source_decoded=str(pClnUp.sub('',source)
+  source_decoded=str(pClnUp.sub('', source))
 
 
   soup = BeautifulSoup(source_decoded)
