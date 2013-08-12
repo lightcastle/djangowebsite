@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods.posts import GetPosts, NewPost, GetPost
 from wordpress_xmlrpc.methods.users import GetUserInfo, GetAuthors
