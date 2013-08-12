@@ -16,7 +16,8 @@ def get_posts(request):
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   authors = wp.call(GetAuthors())
   for blog in all_posts:
-    blog.image = _get_first_image(blog.content)
+    if _get_first_image(blog.content) != None:
+      blog.image = _get_first_image(blog.content)
     blog.content = _remove_wordpress_markup(blog.content)
     blog.content = _remove_html_tags(blog.content)
     for index in authors:
@@ -84,8 +85,8 @@ def _remove_wordpress_markup(source):
 
 def _remove_html_tags(source):
   pattern_three = re.compile(r'<.*?>')
-  parsed_content = pattern_three.sub(r'', source)
-  return parsed_content.encode('utf-8')
+  parsed_content = pattern_three.sub(r'', source.encode('utf-8'))
+  return parsed_content
 
 def _get_first_image(source):
   soup = BeautifulSoup(source)
