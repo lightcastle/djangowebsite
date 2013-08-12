@@ -7,7 +7,8 @@ set :ssh_options, { :forward_agent => true }
 set :deploy_via, :remote_cache
 server "54.243.182.84",   :web, :app, :db, :primary => true
 set :normalize_asset_timestamps, false
-
+set :keep_releases, 4
+after "deploy:update", "deploy:cleanup"
 
 namespace :apache do
   [:stop, :start, :restart, :reload].each do |action|
