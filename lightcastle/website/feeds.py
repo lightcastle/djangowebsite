@@ -74,13 +74,14 @@ def get_latest_blog(request):
 
 def _remove_wordpress_markup(source):
   pattern_one = re.compile(r'\[sourcecode language="(.*)"\]')
-  pattern_two = re.compile(r'\[caption.*?\]')
+  pattern_two = re.compile(r'\[caption.*\]')
   pattern_three = re.compile(r'\[/sourcecode\]')
+  pattern_four = re.compile(r'\[/caption\]')
 
   parsed_content = pattern_one.sub(r'[code class="\1"]', source)
-  parsed_content = pattern_two.sub(r'', parsed_content)
+  parsed_content = pattern_two.sub(r'<caption>', parsed_content)
   parsed_content = pattern_three.sub(r'[/code]', parsed_content)
-
+  parsed_content = pattern_four.sub(r'</caption>', parsed_content)
   return parsed_content
   
 
