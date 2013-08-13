@@ -1,5 +1,4 @@
 {% extends "subpage.html" %}
-{% load markup %}
 {% load cache %}
 {% block title %}The LightCastle Blog{% endblock %}
 {% block page%}blog{% endblock %}
@@ -17,18 +16,22 @@
         {% autoescape off %}
         <div id="blog_image_preview">
           <br/>
+          <br/>
           {{ blog.image }}
           <br/>
         </div>
-        <div id="">
+        <div id="post_content">
+          <br/>
           <center><h2><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h2>Published: {{ blog.date }}<br/>Author: {{ blog.author }}<br/></center>
 
           <br/>
-          {{ blog.content|truncatewords:50 }}<br/>
           <br/>
-          </div>
-        <hr/>
+          {{ blog.content|truncatewords:50 }}<br/>
         <br/>
+        <br/>
+        <hr/>
+        </div>
+
         {% endautoescape %}
       {% endfor %}
       </div>

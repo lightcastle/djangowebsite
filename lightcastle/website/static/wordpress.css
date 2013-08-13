@@ -1,6 +1,6 @@
 #blog_container {
     width: 75%;
-    align: right;
+
     text-align: justify;
     float:left;
     height:auto;
@@ -11,12 +11,9 @@
 
 #blog_content_bar {
     width: 20%;
-    align: right;
     text-align: right;
     float:right;
     overflow:hidden;
-    height:auto;
-
 }
 
 a:link {text-decoration: none} 
@@ -24,15 +21,35 @@ a:active {text-decoration: none}
 
 #blog_image_preview {
     float: left;
-    align: left;
+    overflow:hidden;
     text-align: justify;
     vertical-align: top;
-    display: block;
+    display: inline-block;
     min-height:375px;
-    min-width:300px;
-    padding-right:5px;
+    min-width:50%;
+    border:black;
+    border-style:solid;
+    border-width:2px;
+    max-height:400px;
+    width:40%;
+    text-align:left;
 }
 
+
+#post_content {
+    overflow:hidden;
+    text-align:justify;
+    float:left;
+    padding-left:5px;
+    padding-right:5px;
+    display:inline-block;
+
+    border:black;
+    border-style:solid;
+    border-width:2px;
+    width:45%;
+
+}
 
 
 .alignnone {
