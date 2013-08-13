@@ -10,30 +10,42 @@
         {{ current_time }}
     <p>
       <div id="blog_container">
-      {% cache 1 allposts %}
+        {% cache 1 allposts %}
 
-      {% for blog in all_posts %}
-        {% autoescape off %}
-        <div id="blog_image_preview">
-          <br/>
-          <br/>
-          {{ blog.image }}
-          <br/>
-        </div>
-        <div id="post_content">
-          <br/>
-          <center><h2><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h2>Published: {{ blog.date }}<br/>Author: {{ blog.author }}<br/></center>
+        {% for blog in all_posts %}
+          {% autoescape off %}
+          {% if forloop.counter == 1 %}
+            <div id="first_blog_image_preview">
+          {% else %}
+            <div id="blog_image_preview">
+          {% endif %}
+            <br/>
+            <br/>
+            {{ blog.image }}
+            <br/>
+          </div>
+          {% if forloop.counter == 1 %}
+            <div id="first_post_content">
+          {% else %}
+            <div id="post_content">
+          {% endif %}
 
-          <br/>
-          <br/>
-          {{ blog.content|truncatewords:50 }}<br/>
-        <br/>
-        <br/>
-        <hr/>
-        </div>
+            <br/>
+            <center><h3><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h3>Published: {{ blog.date }}<br/  >Author: {{ blog.author }}<br/></center>
+
+            <br/>
+            <br/>
+            {{ blog.content|truncatewords:50 }}<br/>
+            <br/>
+            <br/>
+          </div>
+
+
 
         {% endautoescape %}
       {% endfor %}
+
+
       </div>
     </p>
 
@@ -46,5 +58,5 @@
 
     </div>
 
-</div>
+
 {% endblock %}
