@@ -1,0 +1,24 @@
+{%extends "subpage.html"%}
+{%block title%}Self-documenting development{%endblock%}
+{% block section %}3_analysis{% endblock %}
+{%block page%}analysis{%endblock%}
+{%block level%}3{%endblock%}
+{%block content%}
+<div id="content_container">
+    <h2>How we roll</h2>
+    <div id="col1">
+        <p><img src="/static/images/diagrams/roadmap.png" style="float:right"/>
+
+LightCastle approaches development the Agile way, because, let's face it, things change. Ideas and strategies evolve, requirements morph, and technology offers unexpected results. This approach allows for needed flexibility to account for emergency fixes, unexpected difficulties and just about anything else that might cause a delay, while also providing structure to keep a project progressing smoothly. Daily or near daily meetings with clients keep them apprised of progress or delays, and makes for a highly collaborative work process. 
+
+A typical development period, or 'sprint', is a few weeks long. We go over requirements and expectations with the client at the beginning of each sprint, referred to as the 'sprint planning' session. By delineating time periods this way, it helps to keep other teams, like quality assurance, involved with the project in-the-know as to when they can expect a given feature to be ready for testing.</p>
+        {%include "stories/doc_stories.html"%}
+    </div>
+<!---    <div id="col2">
+    <p><div class="quote"></div><i></i>
+    </div>
+-->
+    <div class="clear_both"></div>
+
+</div>
+{%endblock%}
