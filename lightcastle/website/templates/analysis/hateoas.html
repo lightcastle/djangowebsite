@@ -1,0 +1,23 @@
+{%extends "subpage.html"%}
+{%block title%}Detailed diagrams&mdash;as useful as they are attractive{%endblock%}
+{% block section %}3_analysis{% endblock %}
+{%block page%}analysis{%endblock%}
+{%block level%}3{%endblock%}
+{%block content%}
+<div id="content_container">
+    <h2>HATEOAS</h2>
+    <div id="col1">
+        <p><img src="/static/images/diagrams/hateos.png" style="float:right"/>When the U.S. Patent office decided to replace its internal patent search mechanism, LightCastle was one of the development shops that took part in the effort. One constraint of the project, which used the REST application architecture, was the use of Hypermedia as the Engine of Application State. Abbreviated as HATEOAS, the requirement provides a sort of baked-in set of documentation by returning hypertext links that delve deeper into the functionality of the application. 
+
+<br/>
+One advantage to this approach is that it allows for a lighter-weight application, reducing complexity. This allows users of the api to get all they need to use the api by simply using the api. For example, if they send a query to somesite.com/cases, the information that was returned included links to sub-results that allowed users to delve deeper into the api simply by using -- a sort of self-documenting approach to development. The information returned to a user contains enough clues for him/her to understand how to use the api better.</p>
+        {%include "stories/doc_stories.html"%}
+    </div>
+<!---    <div id="col2">
+    <p><div class="quote"></div><i></i>
+    </div>
+-->
+    <div class="clear_both"></div>
+
+</div>
+{%endblock%}
