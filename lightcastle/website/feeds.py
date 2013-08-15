@@ -1,4 +1,3 @@
-
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods.posts import GetPosts, NewPost, GetPost
 from wordpress_xmlrpc.methods.users import GetUserInfo, GetAuthors
@@ -57,13 +56,6 @@ def get_latest_blog(request):
   wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
   all_posts = wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
   latest_post = all_posts[0]
-  authors = wp.call(GetAuthors())
-  for index in authors:
-    if index.id == latest_post.user:
-      latest_post.author = index.display_name 
-
-  latest_post.content = _remove_wordpress_markup(latest_post.content)
-  latest_post.content = _remove_html_tags(latest_post.content)
 
   cont = Context({'title': 'Blog', 'latest_post': latest_post})
   return render_to_response('index.html', cont, context_instance=RequestContext(request))
