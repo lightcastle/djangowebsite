@@ -39,7 +39,10 @@ def get_specific_post(request, post_id):
 
   new_content = ""
   for line in blog_post.content.split("\n"):
-    new_content += "<p>"+line+"</p>\n"
+    if _needs_syntax_highlighting(line):
+      new_content += line+"\n"
+    else:
+      new_content += "<p>"+line+"</p>\n"
 
   blog_post.content=new_content
 
@@ -76,6 +79,13 @@ def _remove_wordpress_markup(source):
   parsed_content = pattern_four.sub(r'</caption>', parsed_content)
   return parsed_content
   
+def _needs_syntax_highlighting(source):
+  pre = re.compile(r'\<pre.*?\>')
+  line = False
+  if re.finditer(pre, source):
+    line = True
+  return line
+
 
 def _remove_html_tags(source):
   pattern_three = re.compile(r'<.*?>')
