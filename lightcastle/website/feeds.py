@@ -70,7 +70,7 @@ def _remove_wordpress_markup(source):
   pattern_three = re.compile(r'\[/sourcecode\]')
   pattern_four = re.compile(r'\[/caption\]')
 
-  parsed_content = pattern_one.sub(r'<pre class="prettyprint">', source)
+  parsed_content = pattern_one.sub(r'<pre class="brush: \1">', source)
   parsed_content = pattern_two.sub(r'<caption>', parsed_content)
   parsed_content = pattern_three.sub(r'</pre>', parsed_content)
   parsed_content = pattern_four.sub(r'</caption>', parsed_content)
