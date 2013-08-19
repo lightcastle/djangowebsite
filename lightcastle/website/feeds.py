@@ -45,9 +45,9 @@ def get_specific_post(request, post_id):
   for line in blog_post.content.split("\n"):
     if pre.search(line) is not None:
       needs_highlighting = True
-
-    elif closing_pre.search(line) is not None:# _needs_syntax_highlighting(line) == False:
+    elif closing_pre.search(line) is not None:
       needs_highlighting = False
+
     if needs_highlighting:
       new_content += line+"\n"
     else:
@@ -76,19 +76,22 @@ def get_latest_blog(request):
 
 
 def _remove_wordpress_markup(source):
+
+
   pattern_one = re.compile(r'\[sourcecode language="(.*)"\]')
   pattern_two = re.compile(r'\[caption.*\]')
   pattern_three = re.compile(r'\[/sourcecode\]')
   pattern_four = re.compile(r'\[/caption\]')
 
-  parsed_content = pattern_one.sub(r'<pre class="brush: \1">', source)
+  match = re.search('\[sourcecode language="(.*)"\]', source)
+
+
+  parsed_content = pattern_one.sub(r'<pre class="brush:'+match.group(1).lower()+'">', source)
   parsed_content = pattern_two.sub(r'<caption>', parsed_content)
   parsed_content = pattern_three.sub(r'</pre>', parsed_content)
   parsed_content = pattern_four.sub(r'</caption>', parsed_content)
   return parsed_content
   
-
-
 
 
 def _remove_html_tags(source):
