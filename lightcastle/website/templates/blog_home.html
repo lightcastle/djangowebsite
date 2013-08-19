@@ -9,7 +9,17 @@
 <div id="content_container">
         {{ current_time }}
     <p>
-      <div id="blog_container">
+    <div id="blog_content_bar">
+      {% for blog in all_posts %}
+        <a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/><center>* * *</center>
+
+      {% endfor %}
+
+    </div>
+ 
+
+
+     <div id="blog_container">
         {% cache 1 allposts %}
 
         {% for blog in all_posts %}
@@ -31,32 +41,23 @@
           {% endif %}
 
             <br/>
-            <center><h3><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h3>Published: {{ blog.date }}<br/  >Author: {{ blog.author }}<br/></center>
+            <center><h3><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h3>Published: {{ blog.date }}<br/>Author: {{ blog.author }}<br/></center>
 
             <br/>
             <br/>
             {{ blog.content|truncatewords:50 }}<br/>
             <br/>
             <br/>
-          </div>
-
-
-
+            </div>
         {% endautoescape %}
       {% endfor %}
+      {% endcache %}
 
 
       </div>
     </p>
 
-    <div id="blog_content_bar">
-      {% for blog in all_posts %}
-        <a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/><center>* * *</center>
 
-      {% endfor %}
-      {% endcache %}
-
-    </div>
 
 
 {% endblock %}

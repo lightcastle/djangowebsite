@@ -8,6 +8,7 @@ body {
 	font-size:12px;
 	line-height:24px;
 	background:#FEFEFE;
+  
 }
 
 .float_left {
@@ -184,6 +185,7 @@ body#activeblog a#blog {	background:url(/static/images/nav_bg_dn.jpg) top left r
 	border-bottom:solid 1px #CCC;
 	padding:10px 0px 8px 0px;
 	text-align:center;
+  overflow:hidden;
 }
 
 #footer {

@@ -83,7 +83,7 @@ def _remove_wordpress_markup(source):
   pattern_three = re.compile(r'\[/sourcecode\]')
   pattern_four = re.compile(r'\[/caption\]')
 
-  if re.search('\[sourcecode language="(.*)"\]', source):
+  if re.search('\[sourcecode language="(.*)"\]', source): ### this if/else group is to set match so that it doesnt interfere with the blog_index page, which also calls this function. could break this out into a separate method. TODO clean this up
     match = re.search('\[sourcecode language="(.*)"\]', source)
     match = match.group(1).lower()
   else:
