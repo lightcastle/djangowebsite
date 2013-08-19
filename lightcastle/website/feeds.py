@@ -83,10 +83,14 @@ def _remove_wordpress_markup(source):
   pattern_three = re.compile(r'\[/sourcecode\]')
   pattern_four = re.compile(r'\[/caption\]')
 
-  match = re.search('\[sourcecode language="(.*)"\]', source)
+  if re.search('\[sourcecode language="(.*)"\]', source):
+    match = re.search('\[sourcecode language="(.*)"\]', source)
+    match = match.group(1).lower()
+  else:
+    match = ""
+    
 
-
-  parsed_content = pattern_one.sub(r'<pre class="brush:'+match.group(1).lower()+'">', source)
+  parsed_content = pattern_one.sub(r'<pre class="brush:'+match+'">', source)
   parsed_content = pattern_two.sub(r'<caption>', parsed_content)
   parsed_content = pattern_three.sub(r'</pre>', parsed_content)
   parsed_content = pattern_four.sub(r'</caption>', parsed_content)
