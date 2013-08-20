@@ -27,10 +27,10 @@ body {
     font-size: 1.2em;
 }
 
-#content_container {
-	width:920px;
-}
 
+#content_container {
+  width:920px;
+}
 .indexbox {
 	width:260px;
 	float:left;

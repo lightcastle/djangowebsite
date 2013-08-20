@@ -135,10 +135,10 @@ body {
 
 
 #content_container {
-	width:750px;
+	width:810px;
 	background:#FEFEFE url(/static/images/content_bg.jpg) bottom left repeat-x;
 	margin:20px 0px 20px 0px;
-	padding:20px 45px 25px 105px;
+	padding:20px 45px;
 	min-height: 540px;
   overflow:hidden;
 
