@@ -1,7 +1,7 @@
 #blog_container {
     width: 75%;
 
-    text-align: justify;
+    text-align: left;
     float:left;
     height:auto;
     overflow:hidden;
@@ -25,11 +25,11 @@ a:active {text-decoration: none}
     overflow:hidden;
     text-align: justify;
     vertical-align: top;
-    display: inline-block;
+
     min-height:375px;
     max-height:375px;
     min-width:50%;
-    width:40%;
+    max-width:50%;
     text-align:left;
     border-top-style:solid;
     border-top-color:black;
@@ -44,33 +44,28 @@ a:active {text-decoration: none}
     overflow:hidden;
     text-align: justify;
     vertical-align: top;
-    display: inline-block;
+
     min-height:375px;
     max-height:375px;
     min-width:50%;
-    width:40%;
+    max-width:50%;
     text-align:left;
 
 }
 
 
-hr {
-  display:inline-block 
-  float:left;
-  width:100%;
-} 
 #post_content {
     overflow:hidden;
     text-align:justify;
     float:right;
     padding-left:5px;
     padding-right:5px;
-    display:block;
+
     border-top-width:2px;
     border-top-color:black;
     border-top-style:solid;
 
-    width:40%;
+    width:48%;
 
 }
 
@@ -82,8 +77,8 @@ hr {
     float:right;
     padding-left:5px;
     padding-right:5px;
-    display:block;
-    width:40%;
+
+    width:48%;
 
 }
 
