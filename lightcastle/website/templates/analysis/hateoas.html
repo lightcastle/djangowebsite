@@ -7,7 +7,12 @@
 <div id="content_container">
     <h2>Hypertext as the Engine of Application State</h2>
     <div id="col1">
-        <p><img src="/static/images/diagrams/hateos.png" style="float:right"/>When the U.S. Patent office decided to replace its internal patent search mechanism, LightCastle was one of the development shops that took part in the effort. One constraint of the project, which implemented RESTful architecture, was the use of Hypermedia as the Engine of Application State. Abbreviated as HATEOAS, this approach provides a sort of baked-in set of documentation by returning results that include hypertext links delving deeper into the functionality of the application, teaching users how the application works from their first interaction with it. The HATEOAS constraint acts as a sort of gateway, progressively funneling the client toward its destination by virtue of the results returned with each request. One advantage to this approach is that it reduces the complexity of the application, allowing for cleaner code and lowering maintenance requirements. 
+        <p><img src="/static/images/diagrams/hateos.png" style="float:right"/>When the U.S. Patent office decided to replace its internal patent search mechanism, LightCastle was one of the development shops that took part in the effort. One constraint of the project, using a RESTful architecture, was the use of Hypermedia as the Engine of Application State. Abbreviated as HATEOAS, this approach provides a sort of baked-in set of documentation by returning results that include hypertext links which delve deeper into the functionality of the application, teaching users how the application works from their first interaction with it. 
+
+The client interacts with the api solely through hypermedia.
+
+The HATEOAS constraint acts as a sort of gateway, progressively funneling the client toward its destination by virtue of the results returned with each request. One advantage to this approach is that it reduces the complexity of the application, allowing for cleaner code and lowering maintenance requirements. 
+
 </p>
         {%include "stories/doc_stories.html"%}
     </div>
