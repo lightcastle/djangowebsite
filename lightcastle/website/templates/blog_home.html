@@ -8,14 +8,14 @@
 
 <div id="content_container">
         {{ current_time }}
-    <p>
-    <div id="blog_content_bar">
-      {% for blog in all_posts %}
-        <a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/><center>* * *</center>
+   <p>
+     <div id="blog_content_bar">
+       {% for blog in all_posts %}
+         <a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/><center>* * *</center>
 
-      {% endfor %}
+       {% endfor %}
 
-    </div>
+     </div>
  
 
 
@@ -26,19 +26,18 @@
         <div id="blog_preview">
           {% autoescape off %}
             <div id="blog_image_preview">
-            <br/>
-            <br/>
-            {{ blog.image }}
-            <br/>
-          </div>
+              <br/>
+              <br/>
+              {{ blog.image }}
+              <br/>
+            </div>
             <div id="post_content">
+              <br/>
+              <center><h3><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h3>Published: {{ blog.date }}<br/>Author: {{ blog.author }}<br/></center>
 
-            <br/>
-            <center><h3><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h3>Published: {{ blog.date }}<br/>Author: {{ blog.author }}<br/></center>
-
-            <br/>
-            <br/>
-            {{ blog.content|truncatewords:50 }}<br/>
+              <br/>
+              <br/>
+              {{ blog.content|truncatewords:50 }}<br/>
 
             </div>
         {% endautoescape %}
