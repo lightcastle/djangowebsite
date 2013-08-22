@@ -37,13 +37,26 @@ Step 4: Install django
     create database djangotest
 	sudo apt-get install python-django
 
-Step 5: Update Configuration
+Step 5: Install Memcached
+---------------------
+
+    sudo apt-get install memcached
+    sudo pip install python-memcached
+
+Step 6: Install other dependencies
+---------------------
+
+    sudo pip install python-wordpress-xmlrpc
+	sudo pip install beautiful-soup-4
+
+Step 7: Update Configuration
 -------------------------
 
 edit lightcastle/settings.py.examtp settings so that your email address is setup in the smtp settings.
 save the file on your computer without the .example suffix.
-    	
-Step 6: Start up the web server
+
+
+Step 8: Start up the web server
 -----------------------
     
 	cd lightcastle/
@@ -108,40 +121,6 @@ A basic page should look something like this, and should be inside the templates
 	    {%include "~~stories/sa_stories.html~~~~this is where you can include other html files.  "%}
 	</div>
 	{% endblock %}
-
-
-
-
-
-
-
-install git
-
-sudo aptitude install git 
-
-add ssh key to settings in github
-
-cloned into dir
-
-apt-get install bundler
-
-
-
-
-Dependencies
-
-python-markdown
-sudo aptitude install mysql-server php5-mysql php5 php5-memcache
-sudo apt-get install memcached
-sudo apt-get install php-pear
-sudo apt-get install build-essential
-sudo pecl install memcache
-sudo pip install python-memcached
-
-sudo pip install markdown pygments django-pagedown
-
-
-
 
 
 
