@@ -53,13 +53,11 @@ def get_specific_post(request, post_id):
     else:
       new_content += "<p>"+line+"</p>\n"
 
-
   blog_post.content=new_content
 
   for index in authors:
     if index.id == blog_post.user:
       blog_post.author = index.display_name 
-
 
   context = Context({'title': 'Blog', 'blog_post': blog_post})
   return render_to_response('blog_post.html', context, context_instance=RequestContext(request))
