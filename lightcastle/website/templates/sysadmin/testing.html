@@ -7,13 +7,24 @@
 <div id="content_container">
     <div id="col1">
     <h2>Testing for Success</h2>
-    <p>Server requirements have changed dramatically over the years, with much of the Web moving to the cloud. As the Internet has evolved, so have we. LightCastle uses Amazon Web Services for many of its cloud-based servers. We discuss requirements with clients to determine the right server for the job, keeping in mind everything from how long a server needs to run to whether to use reserved instances, all the while getting the most bang for your buck. Other big-box server providers LightCastle has worked with include Heroku and Linode. We frequently use Linode to monitor AWS instances, keeping our server monitor on a separate network in case of outages.</p>
-
+ 
+    <img src="/static/images/jenkins2.png" alt="Jenkins graphs" width="374" height="249" class="float_right" />
     <p>When setting up servers for deployment, Tamara sets up Jenkins to run tests before pushing code out. In addition, she arranges for the application to notify developers whether their code passes muster (often to the chagrin of the developers). For one open-source charity social-networking project, Tamara set up Jenkins to allow developers to know if their code is kosher.</p>
 
 
     {%include "stories/sa_stories.html"%}
     </div>
+
+    <div id="col2">
+        <p><img src="/static/images/jenkins.png" width="145" height="228" alt="Jenkins" /></p>
+        <p>Jenkins is an open source application for managing 'Continuous Integration' - a critical component
+	   of agile sofware development.  'Continuous Integration' means that you have a single location where
+	   all software changes are applied.  Automated tests can then be executed on a 
+	   regular schedule.  This helps identify defects early in the process when they can be fixed with a 
+	   minimum of effort.</p>
+    </div>
+
+
     <br clear="both"/>
 </div>
 {%endblock%}

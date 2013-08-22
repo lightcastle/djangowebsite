@@ -6,15 +6,16 @@
 {%block content%}
 <div id="content_container">
   <div id="col1">
-    <h2>Server Support and Clustering</h2>
+    <h2>Scaling and Clustering</h2>
+    <p>Server requirements have changed dramatically over the years, with much of the Web moving to the cloud. As the Internet has evolved, so have we. LightCastle uses Amazon Web Services for many of its cloud-based servers. We discuss requirements with clients to determine the right server for the job, keeping in mind everything from how long a server needs to run to whether to use reserved instances, all the while getting the most bang for your buck. Other big-box server providers LightCastle has worked with include Heroku and Linode. We frequently use Linode to monitor AWS instances, keeping our server monitor on a separate network in case of outages.</p>
     <p>While working with nTelos, Tamara built a server cluster that hosted software and linked the Integrated Voice Response system underlying the company's customer care phone tree and a wireless over-the-air provisioning platform. This allowed handsets to be programmed by inventory and sales employees by dialing a number on the handset. Clustering the servers provided greater stability to the system by granting redundancy, server availability and increased uptime. The provisioning platform streamlined the provisioning of new handsets, removing the need for specific procedures for myriad devices. </p>
 
 
     {%include "stories/sa_stories.html"%}
   </div>
 <div id="col2">
-    <p><img src="/static/images/pacemaker.png" width="200" height="88" alt="cactus" /></p>
-    <p>Pacemaker is an Open Source, high availability resource manager suitable for both small and large clusters.  </p>
+    <p><img src="/static/images/aws.png" width="200" height="73" alt="aws" /></p>
+    <p>Amazon Web Services (abbreviated AWS) is a predominant Cloud Computing platform.  Cloud Computing is a marketing term, and does not have an exact definition.  We use AWS (as well as competitors Linode and Rackspace) to provide s means of hosting applications for our clients.  This can eleminiate the need to maintain hardware on site at the client, and can greatly reduce long term maintainence costs and dependablity concerns. </p>
 </div>
 <div class="clear_both"></div>
 
