@@ -7,8 +7,8 @@
 {% block content %}
 
 <div id="content_container">
-        {% cache 120 allposts %}
-        {{ current_time }}
+        {% cache 21600 allposts %}
+
    <p>
      <div id="blog_content_bar">
        {% for blog in all_posts %}
