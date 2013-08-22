@@ -7,6 +7,7 @@
 {% block content %}
 
 <div id="content_container">
+        {% cache 120 allposts %}
         {{ current_time }}
    <p>
      <div id="blog_content_bar">
@@ -20,7 +21,7 @@
 
 
      <div id="blog_container">
-        {% cache 120 allposts %}
+
 
         {% for blog in all_posts %}
         <div id="blog_preview">
