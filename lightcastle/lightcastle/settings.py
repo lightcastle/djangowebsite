@@ -2,7 +2,7 @@
 import os
 
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = False
 WORDPRESS_PASS = os.environ.get("WORDPRESS_PASS")
 ADMINS = (
