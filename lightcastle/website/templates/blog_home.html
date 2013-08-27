@@ -9,7 +9,7 @@
 <div id="content_container">
    <p>
      <div id="blog_content_bar">
-       {% cache 21600 allposts %}
+       {% cache 1 allposts %}
 
        {% for blog in all_posts %}
          <a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/><center>* * *</center>
