@@ -5,7 +5,8 @@ set :user, "lc_web_user"
 set :deploy_to, "/home/lc_web_user/lightcastletech.com"
 set :ssh_options, { :forward_agent => true }
 set :deploy_via, :remote_cache
-server "54.243.182.84",   :web, :app, :db, :primary => true
+server "54.221.245.227",   :web, :app, :db, :primary => true
+#server "54.243.182.84",   :web, :app, :db, :primary => true
 set :normalize_asset_timestamps, false
 set :keep_releases, 4
 after "deploy:update", "deploy:cleanup"
