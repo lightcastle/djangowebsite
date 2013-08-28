@@ -1,14 +1,16 @@
 # Django settings for lightcastle project.
 import os
 
+PROJECT_DIR = os.path.dirname(__file__)
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = False
-WORDPRESS_PASS = os.environ.get("WORDPRESS_PASS")
+WORDPRESS_PASS = os.environ.get('WORDPRESS_PASS')
 ADMINS = (
     ('Tamara Funk', 'tamara@lightcastletech.com')
     # ('Your Name', 'your_email@example.com'),
 )
+
 
 MANAGERS = ADMINS
 
@@ -17,12 +19,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'djangotest',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': os.environ.get("DB_USER", ""),
-        'PASSWORD': os.environ.get("DB_PASSWORD", ""),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -64,17 +67,19 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/lc_web_user/lightcastletech.com/static'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = 'http://lightcastletech.com/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    #os.path.join(PROJECT_DIR, 'static'),
+    '/home/lc_web_user/lightcastletech.com/current/lightcastle/website/static'
 )
 
 # List of finder classes that know how to find static files in
@@ -87,7 +92,6 @@ STATICFILES_FINDERS = (
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
