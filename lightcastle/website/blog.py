@@ -56,6 +56,7 @@ class Blog():
     blog_post = self.all_posts[post_id]
     blog_post.content = _remove_wordpress_markup(blog_post.content)
 
+    ##TODO: this section should be changed to use beautifulsoup html parser because regex doesnt quite do the job. changing it should clean the code up a bit
     needs_highlighting = False
     pre = re.compile(r'<pre.*?>')# these 2 lines used to determine where code highlighting is needed
     closing_pre = re.compile(r'</pre>')
