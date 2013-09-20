@@ -3,7 +3,7 @@ import os
 
 PROJECT_DIR = os.path.dirname(__file__)
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = False
 WORDPRESS_PASS = os.environ.get('WORDPRESS_PASS')
 ADMINS = (
@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.markup',
+    'jquery',
 #    'wordpress',
     # Uncomment the next line to enable the admin:
 #    'django.contrib.admin',
