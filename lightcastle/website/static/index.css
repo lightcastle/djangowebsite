@@ -16,8 +16,15 @@ body {
 #header {
 		width:920px;
 		height:450px;
-		background:url('/static/images/josh.jpg') top left no-repeat;
+		background:url('/static/images/index_header_change.jpg') top left no-repeat;
 		margin-top:13px;
+}
+
+#header_image {
+    padding-right: 145px;
+    padding-top: 220px;
+    width: 320px;
+    font-size: 1.2em;
 }
 
 #header_copy {
