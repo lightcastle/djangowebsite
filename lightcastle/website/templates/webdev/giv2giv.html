@@ -1,0 +1,28 @@
+{% extends "subpage.html" %}
+{% block title %}Information Architecture with Solr and Lucene{% endblock %}
+{% block section %}3_webdev{% endblock %}
+{%block page%}webdev{%endblock%}
+{%block level%}3{%endblock%}
+{% block content %}
+<div id="content_container">
+    <h2>Information Architecture with Solr and Lucene</h2>
+    <div id="col1">
+         <p>giv2giv was looking for a knowledgeable software design firm to take us from a standing-start to a working prototype, and we ultimately chose LightCastle Tech. Their expertise extended from software development to the infrastructure required to coordinate and deploy a coordinated team of products. One example of a tool they brought to bear is Jenkins, a Continuous Integration framework. Through some creative scripting, Jenkins performed automated testing on each github commit, and report results in another tool, the giv2giv development team's BaseCamp Campfire chat room. Future efforts include further scripting to push github commits to the production environment upon successful Jenkins test completion. 
+
+It is through use of a number of successful tools like Jenkins that LightCastle has helped move the giv2giv platform development forward with confidence and coordination. From direct experience of real-world problems creatively solved, I highly recommend LightCastle Technical Consultants.</p>
+        <p><img src="/static/images/solr.png" style="float:left"/> Solr is an open source search platform&mdash;imagine your own custom search engine&mdash;just as fast
+            and intuitive as Google, but configured to do exactly what you want, and to search only the content that interests you.  Solr provides hit highlighting and faceted search, on top
+            of the phenomenally fast Lucene full-text search library.  Solr scales. Dynamic clusters, distributed search, and index replication mean you will not
+            outgrow its capabilities.</p>
+        {% include "stories/wd_stories.html" %}
+    </div>
+    <div id="col2">
+        <p><div class="quote"></div><i>Dan Funk led a technical team that reinvented an aging product.  Dan demonstrated innovation and leadership in designing an
+            information search and discovery architecture with the latest technologies that our client thought was absolutely fantastic.
+            Several years later, that system is still going strong and is widely used by government analysts working on national security issues.”</i></p>
+        <b>Sue Rowell</b>, <i>PMP, Battelle Memorial Institute</i>
+    </div>
+    <div class="clear_both"></div>
+
+</div>
+{% endblock %}
