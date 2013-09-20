@@ -16,7 +16,7 @@ body {
 #header {
 		width:920px;
 		height:450px;
-
+		background:url(/static/images/index_h.jpg) top left no-repeat;
 		margin-top:13px;
 }
 
