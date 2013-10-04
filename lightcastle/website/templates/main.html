@@ -35,6 +35,68 @@
         google.load("jquery", "1.7.1");
         google.load("jqueryui", "1.8.17");
     </script>
+
+
+
+
+  <style>
+    /* Prevents slides from flashing */
+    #slides {
+      display:none;
+    }
+  </style>
+
+
+
+
+  <!-- jQuery library (served from Google) -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <!-- bxSlider Javascript file -->
+  <script src="{{STATIC_URL}}/js/jquery.bxslider.min.js"></script>
+  <!-- bxSlider CSS file -->
+  <link href="{{STATIC_URL}}/jquery.bxslider.css" rel="stylesheet" />
+  <script>
+    $(document).ready(function(){
+      $('.bxslider').bxSlider({
+        speed: 500,
+        controls: false,
+        auto: true,
+        pause: 5000,
+        pager: false,
+
+      });
+    });
+  </script>
+
+  <script src="{{STATIC_URL}}jquery.slides.min.js"></script>
+  
+
+  <script>
+    $(function(){
+      $("#slides").slidesjs({
+        width: 940,
+        height: 528,
+        navigation: {
+          active: false,
+        },
+        play: {
+          active: false,
+          effect: "slide",
+          interval: 5000,
+          auto: true,
+          swap: true,
+        },
+        pagination: {
+          active: false,
+        }
+      });
+    });
+  </script>
+
+
+
+
+
 </head>
 
 <body id="active{% block page %}{% endblock %}">
