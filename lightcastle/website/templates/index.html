@@ -11,10 +11,17 @@
 <link rel="stylesheet" href={{ STATIC_URL }}index.css />
 
 <div id="header">
-  
     <div id="header_copy">
       <p>LightCastle offers analysis, development, and administration of complex software systems. We are seasoned professionals with a shared focus on making the world a better place to live.</p>
+
      <strong><a href="/about/">Learn more about our team.</a></strong><br/><br/>Don't forget to read our latest blog entry <strong><a href="{% url b_post 1 %}">{{ latest_post.title }}</a></strong></p>
+    </div>
+    <div id = "slider_container">
+      <ul class = "bxslider">
+        <li><img src="/static/images/ruby.jpg"/></li>
+        <li><img src="/static/images/solr.jpg"/></li>
+        <li><img src="/static/images/aws.jpg"/></li>
+      </ul>
     </div>
 
 
@@ -22,7 +29,6 @@
 
 
 <div id="content_container">
-
     <div id="indexbox1" class="indexbox">
         <p><strong><a href="/analysis/">Analysis</a></strong></p>
         <p>Cogent Documentation:

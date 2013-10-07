@@ -25,6 +25,7 @@ body {
     padding-top: 220px;
     width: 320px;
     font-size: 1.2em;
+    
 }
 
 #header_copy {
@@ -68,11 +69,11 @@ body {
 }
 
 #slider_container {
-    position: absolute;
-    top:200px;
-    right:20%;
-    width:18%;
-    height:20%;
+    position: relative;
+    height: 500px;
+    left: 600px;
+    top: -250px;
+    width: 200px;
 }
 
 #footernav_container {
