@@ -16,9 +16,6 @@ def get_form(request):
     return render_to_response('contact.html', context, context_instance=RequestContext(request))
 
 
-
-
-
 def submit(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -27,17 +24,7 @@ def submit(request):
           send_mail('Somebody filled out our contact form', message, 'funkt@lightcastletech.com', ['tamara@lightcastletech.com'], fail_silently=True)
           print message
           context = Context({'title': 'Contact Us', 'form': form})
-#          print form['name']
-#          print form['email']
-#        return HttpResponseRedirect('/sendMessage')
         return render_to_response('sendMessage.html', context, context_instance=RequestContext(request))
-
-
-
-
-
-
-
 
 
 
