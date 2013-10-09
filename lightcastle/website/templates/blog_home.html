@@ -11,8 +11,8 @@
      <div id="blog_content_bar">
 
 
-       {% for blog in all_posts %}
-         <a href="{% url b_post forloop.counter %}">{{ blog.title }}</a><br/><center>* * *</center>
+       {% for blog in all_posts reversed %}
+         <a href="{% url b_post forloop.revcounter %}">{{ blog.title }}</a><br/><center>* * *</center>
 
        {% endfor %}
 
@@ -23,7 +23,7 @@
      <div id="blog_container">
 
 
-        {% for blog in all_posts %}
+        {% for blog in all_posts reversed%}
         <div id="blog_preview">
           {% autoescape off %}
             <div id="blog_image_preview">
@@ -34,7 +34,7 @@
             </div>
             <div id="post_content">
               <br/>
-              <center><h3><a href="{% url b_post forloop.counter %}">{{ blog.title }}</a></h3>Published: {{ blog.date }}<br/>Author: {{ blog.author }}<br/></center>
+              <center><h3><a href="{% url b_post forloop.revcounter %}">{{ blog.title }}</a></h3>Published: {{ blog.date }}<br/>Author: {{ blog.author }}<br/></center>
 
               <br/>
               <br/>
