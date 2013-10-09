@@ -1,9 +1,13 @@
 # Django settings for lightcastle project.
 import os
+from os.path import join, abspath, dirname
+
+here = lambda *x: join(abspath(dirname(__file__)), *x)
+PROJECT_ROOT = here("..")
 
 PROJECT_DIR = os.path.dirname(__file__)
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = False
 WORDPRESS_PASS = os.environ.get('WORDPRESS_PASS')
 ADMINS = (
@@ -122,6 +126,13 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+
+TEST_RUNNER = 'discover_runner.DiscoverRunner'
+TEST_DISCOVER_TOP_LEVEL = PROJECT_ROOT
+TEST_DISCOVER_ROOT = PROJECT_ROOT
+TEST_DISCOVER_PATTERN = "test_*"
+
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,6 +148,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'website',
+    'discover_runner',
 )
 
 EMAIL_USE_TLS = True
