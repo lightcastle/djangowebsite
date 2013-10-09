@@ -34,3 +34,15 @@ class BlogTestCase(unittest.TestCase):
 
 
 
+    def test_remove_wordpress_markup(self):
+        """"content should be without any wordpress tags in it"""
+        wordpress = re.compile('\[sourcecode\]')
+        self.assertEqual(wordpress.findall(blog._remove_wordpress_markup(self.b.all_posts[15].content)), [])
+        self.assertEqual(wordpress.findall(blog._remove_wordpress_markup(self.b.all_posts[22].content)), [])
+        self.assertEqual(wordpress.findall(blog._remove_wordpress_markup(self.b.all_posts[-1].content)), [])
+        self.assertEqual(wordpress.findall(blog._remove_wordpress_markup(self.b.all_posts[0].content)), [])
+
+
+
+
+
