@@ -7,7 +7,7 @@ PROJECT_ROOT = here("..")
 
 PROJECT_DIR = os.path.dirname(__file__)
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = False
 WORDPRESS_PASS = os.environ.get('WORDPRESS_PASS')
 ADMINS = (
