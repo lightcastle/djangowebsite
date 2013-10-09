@@ -13,7 +13,7 @@ def get_posts(request):
 
 def get_latest_blog(request):
   b = blog.Blog()
-  b.latest_blog = b.all_posts[-1]
+  b.latest_blog = b.all_posts[-1] #the latest blog should be the last one in the list of all_posts
   cont = Context({'title': 'Blog', 'latest_post': b.latest_blog})
   return render_to_response('index.html', cont, context_instance=RequestContext(request))
 
