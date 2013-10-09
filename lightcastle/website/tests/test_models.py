@@ -17,11 +17,11 @@ class BlogTestCase(unittest.TestCase):
 
     def test_get_specific_post_method(self):
         self.assertEqual(self.b.get_specific_post(1).title, "Python -- It's Classy!")
-
+        self.assertEqual(self.b.get_specific_post(10).title, "Continuous Deployment a la Agile Richmond")
 
     def test_get_first_image_method(self):
         """_get_first_image method should return the first <img> tag of the first blog entry, in this case, a python image"""
-        self.assertEqual(blog._get_first_image(self.b.all_posts[-1].content), '<img alt="Python Logo" class="size-medium wp-image-37 alignright" height="79" src="http://lightcastletech.files.wordpress.com/2012/08/486px-python_logo-svg.png?w=300" title="486px-Python_logo.svg" width="269"/>')
+        self.assertEqual(blog._get_first_image(self.b.all_posts[0].content), '<img alt="Python Logo" class="size-medium wp-image-37 alignright" height="79" src="http://lightcastletech.files.wordpress.com/2012/08/486px-python_logo-svg.png?w=300" title="486px-Python_logo.svg" width="269"/>')
 
 
     def test_remove_html_tags(self):

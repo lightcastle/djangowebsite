@@ -38,6 +38,7 @@ class Blog():
     self.wp = Client('http://lightcastletech.wordpress.com/xmlrpc.php', 'brownj@lightcastletech.com', settings.WORDPRESS_PASS)
     self.all_posts = self.wp.call(GetPosts({'orderby': 'post_modified', 'number': 100, 'post_status': 'publish'}))
     self.authors = self.wp.call(GetAuthors())
+    self.all_posts = self.all_posts[::-1]
     for post in self.all_posts: #this and the nested for-loop sets the author's display name because it isnt handled already by xmlrpc library
       for author in self.authors:
         if author.id == post.user:
@@ -50,12 +51,11 @@ class Blog():
     for blog in self.all_posts:
       blog.content = _remove_wordpress_markup(blog.content)
       blog.content = _remove_html_tags(blog.content)
-    return self.all_posts.reverse()
+    return self.all_posts
 
 
   def get_specific_post(self, post_id):
     post_id = int(post_id) - 1
-    self.all_posts = self.all_posts[::-1]
     blog_post = self.all_posts[post_id]
     blog_post.content = _remove_wordpress_markup(blog_post.content)
 

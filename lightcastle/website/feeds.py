@@ -13,7 +13,7 @@ def get_posts(request):
 
 def get_latest_blog(request):
   b = blog.Blog()
-  b.latest_blog = b.all_posts[0] #because the way we are parsing the api results from the wordpress api in the Blog class instantiation, the latest blog entry is the first in the array, therefore, latest_blog is at index 0
+  b.latest_blog = b.all_posts[-1]
   cont = Context({'title': 'Blog', 'latest_post': b.latest_blog})
   return render_to_response('index.html', cont, context_instance=RequestContext(request))
 
