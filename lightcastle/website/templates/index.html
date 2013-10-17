@@ -11,7 +11,7 @@
     <div id="header_copy">
       <p>LightCastle offers analysis, development, and administration of complex software systems. We are seasoned professionals with a shared focus on making the world a better place to live.</p>
 
-     <strong><a href="/about/">Learn more about our team.</a></strong><br/><br/>Don't forget to read our latest blog entry <strong><a href="{% url b_post 0 %}"><!--- the post id should be 0 for b_post because the way we are handling the wordpress api in our blog model -->{{ latest_post.title }}</a></strong></p>
+     <strong><a href="/about/">Learn more about our team.</a></strong><br/><br/>Don't forget to read our latest blog entry <strong><a href="{{ latest_post.get_absolute_url }}"><!--- the post id should be 0 for b_post because the way we are handling the wordpress api in our blog model -->{{ latest_post.title }}</a></strong></p>
     </div>
     <div id = "slider_container">
       <ul class = "bxslider">
