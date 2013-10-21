@@ -6,7 +6,8 @@ set :deploy_to, "/home/lc_web_user/lightcastletech.com"
 set :ssh_options, { :forward_agent => true }
 set :deploy_via, :remote_cache
 #server "54.221.245.227",   :web, :app, :db, :primary => true #testserver
-server "54.243.182.84",   :web, :app, :db, :primary => true #actualserver
+#server "54.243.182.84",   :web, :app, :db, :primary => true #actualserver
+server "54.204.3.38",   :web, :app, :db, :primary => true #new lc site that tamara set up
 set :normalize_asset_timestamps, false
 set :keep_releases, 4
 after "deploy:update", "deploy:cleanup"

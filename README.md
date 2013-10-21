@@ -47,7 +47,8 @@ Step 6: Install other dependencies
 ---------------------
 
     sudo pip install python-wordpress-xmlrpc
-	sudo pip install beautiful-soup-4
+	sudo pip install beautifulsoup4
+	sudo pip install markdown
 
 Step 7: Update Configuration
 -------------------------
