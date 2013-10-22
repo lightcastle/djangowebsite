@@ -50,11 +50,14 @@ Step 6: Install other dependencies
 	sudo pip install beautifulsoup4
 	sudo pip install markdown
 
+make sure you enable the site and the wsgi mod
+
 Step 7: Update Configuration
 -------------------------
 
 edit lightcastle/settings.py.examtp settings so that your email address is setup in the smtp settings.
 save the file on your computer without the .example suffix.
+
 
 
 Step 8: Start up the web server
