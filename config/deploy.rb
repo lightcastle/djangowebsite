@@ -10,7 +10,7 @@ set :deploy_via, :remote_cache
 server "54.204.3.38",   :web, :app, :db, :primary => true #new lc site that tamara set up
 set :normalize_asset_timestamps, false
 set :keep_releases, 4
-after "deploy:update", "deploy:cleanup"
+after "deploy:update", "deploy:cleanup", "apache:restart", "symlink_shared"
 
 namespace :apache do
   [:stop, :start, :restart, :reload].each do |action|
@@ -21,6 +21,12 @@ namespace :apache do
   end
 end
 
+
+desc "Symlink shared configs and folders on each release."
+task :symlink_shared do
+  run "ln -nfs #{shared_path}/settings.py #{release_path}/lightcastle/lightcastle/settings.py"
+
+end
 
 #
 #
