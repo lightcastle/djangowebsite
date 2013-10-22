@@ -40,7 +40,7 @@ urlpatterns = patterns('',
     url(r'^analysis', TemplateView.as_view(template_name="analysis.html")),
     url(r'^contact', 'website.views.get_form'),
 #    url(r'^contact', TemplateView.as_view(template_name="contact.html")),
-    url(r'^sendMessage/', 'website.views.submit'),
+    url(r'^sendMessage', 'website.views.submit'),
 #TemplateView.as_view(template_name="sendMessage.html")),
 
     url(r'^', 'website.feeds.get_latest_blog'),#TemplateView.as_view(template_name="index.html")), #
