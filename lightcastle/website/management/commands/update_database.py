@@ -29,10 +29,10 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         if options['find-new-post']:
-            pass
+            #pass
             # potential code to update database
-            # if len(all_posts) == len(b)+1:
-            #   new_post = blog.Blog(title=all_posts[-1].title, author=all_posts[-1].author,content=all_posts[-1].content,initial_image=all_posts[-1].image, date = all_posts[-1].date)
+            if len(self.all_posts) == len(blog.Blog.objects.order_by('id'))+1:
+              new_post = blog.Blog(title=self.all_posts[-1].title, author=self.all_posts[-1].author,content=self.all_posts[-1].content,initial_image=self.all_posts[-1].image, date = self.all_posts[-1].date)
 
         else:
 #          this and the nested for-loop sets the author's display name because it isnt handled already by xmlrpc library
