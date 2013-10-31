@@ -31,7 +31,7 @@ class Command(BaseCommand):
         if options['find-new-post']:
             #pass
             # potential code to update database
-            for author in authors:
+            for author in self.authors:
                 if author.id == all_posts[-1].user:
                     all_posts[-1].author == author.display_name
             if len(self.all_posts) == len(blog.Blog.objects.order_by('id')) + 1:
