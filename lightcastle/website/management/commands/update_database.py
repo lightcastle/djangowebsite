@@ -36,7 +36,7 @@ class Command(BaseCommand):
                     self.all_posts[-1].author = author.display_name
 
             if blog._get_first_image(self.all_posts[-1].content) != "None":
-                self.all_posts[-1].image = blog._get_first_image(post.content)
+                self.all_posts[-1].image = blog._get_first_image(self.all_posts[-1].content)
             else:
                 self.all_posts[-1].image = ""
 
