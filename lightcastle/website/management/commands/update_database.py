@@ -35,10 +35,10 @@ class Command(BaseCommand):
                 if author.id == self.all_posts[-1].user:
                     self.all_posts[-1].author = author.display_name
 
-            if all_posts[-1]._get_first_image(post.content) != "None":
-                all_posts[-1].image = blog._get_first_image(post.content)
+            if self.all_posts[-1]._get_first_image(post.content) != "None":
+                self.all_posts[-1].image = blog._get_first_image(post.content)
             else:
-                all_posts[-1].image = ""
+                self.all_posts[-1].image = ""
 
 
             if len(self.all_posts) == len(blog.Blog.objects.order_by('id')) + 1:
