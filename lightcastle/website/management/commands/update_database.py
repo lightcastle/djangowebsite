@@ -31,9 +31,14 @@ class Command(BaseCommand):
         if options['find-new-post']:
             #pass
             # potential code to update database
-            if len(self.all_posts) == len(blog.Blog.objects.order_by('id'))+1:
-              new_post = blog.Blog(title=self.all_posts[-1].title, author=self.all_posts[-1].author,content=self.all_posts[-1].content,initial_image=self.all_posts[-1].image, date = self.all_posts[-1].date)
+            for author in authors:
+                if author.id == all_posts[-1].user:
+                    all_posts[-1].author == author.display_name
+            if len(self.all_posts) == len(blog.Blog.objects.order_by('id')) + 1:
+                new_post = blog.Blog(title=self.all_posts[-1].title, author=self.all_posts[-1].author,content=self.all_posts[-1].content,initial_image=self.all_posts[-1].image, date = self.all_posts[-1].date)
 
+
+#http://stackoverflow.com/questions/4769004/learning-python-from-ruby-differences-and-similarities
         else:
 #          this and the nested for-loop sets the author's display name because it isnt handled already by xmlrpc library
             for post in self.all_posts: 
@@ -44,7 +49,7 @@ class Command(BaseCommand):
                 if blog._get_first_image(post.content) != "None":
                     post.image = blog._get_first_image(post.content)
                 else:
-                  post.image = ""
+                    post.image = ""
 
                 b = blog.Blog( title = post.title, author = post.author, initial_image = post.image, date = post.date, content = post.content)
                 b.save()
