@@ -35,7 +35,7 @@ class Command(BaseCommand):
                 if author.id == self.all_posts[-1].user:
                     self.all_posts[-1].author = author.display_name
 
-            if self.all_posts[-1]._get_first_image(post.content) != "None":
+            if blog._get_first_image(self.all_posts[-1].content) != "None":
                 self.all_posts[-1].image = blog._get_first_image(post.content)
             else:
                 self.all_posts[-1].image = ""
