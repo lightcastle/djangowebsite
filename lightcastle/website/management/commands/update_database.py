@@ -33,7 +33,7 @@ class Command(BaseCommand):
             # potential code to update database
             for author in self.authors:
                 if author.id == all_posts[-1].user:
-                    all_posts[-1].author == author.display_name
+                    self.all_posts[-1].author == author.display_name
             if len(self.all_posts) == len(blog.Blog.objects.order_by('id')) + 1:
                 new_post = blog.Blog(title=self.all_posts[-1].title, author=self.all_posts[-1].author,content=self.all_posts[-1].content,initial_image=self.all_posts[-1].image, date = self.all_posts[-1].date)
 
