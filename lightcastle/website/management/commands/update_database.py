@@ -43,7 +43,7 @@ class Command(BaseCommand):
 
             if len(self.all_posts) == len(blog.Blog.objects.order_by('id')) + 1:
                 new_post = blog.Blog(title=self.all_posts[-1].title, author=self.all_posts[-1].author,content=self.all_posts[-1].content,initial_image=self.all_posts[-1].image, date = self.all_posts[-1].date)
-
+                new_post.save()
 
 #http://stackoverflow.com/questions/4769004/learning-python-from-ruby-differences-and-similarities
         else:
